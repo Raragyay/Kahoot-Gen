@@ -1,0 +1,46 @@
+﻿,Questions,Answer 1,Answer 2,Answer 3,Answer 4,Time,Correct Answer
+0,English To French,ok,ok,ok,ok,5,"1,2,3,4"
+1,mug,tasse,bol,soucoupe,vase,20,1
+2,large bowl,sealadier,saladier,soucoupe,bol,20,2
+3,dish,plat,pot,soucoupe,plateau,20,1
+4,vase,plateau,verre à vin,faire la vaisselle,vase,20,4
+5,cup,faire la vaisselle,tasse,vase,assiette,20,2
+6,to rewrite,avertir,détruire,récrire,conduire,20,3
+7,to like; to love,suspendre,maigrir,aimer,fêter,20,3
+8,skinny,mince,petit,laid,moche,20,1
+9,to pick,corriger,cueisllisr,cueillir,nager,20,3
+10,kitchen,sous-sol,cuisine,réfrigérateur,salle de séjour,20,2
+11,French To English,ok,ok,ok,ok,5,"1,2,3,4"
+12,plateau,tray,mug,wine glass,jar,20,1
+13,verre,wine glass,cup,glass,plate,20,3
+14,plat,dish,vase,mug,plate,20,1
+15,faire la vaisselle,to do the dishes,saucer,dishes;crockery,mug,20,1
+16,soucoupe,glass,to do the dishes,saucer,small bowl,20,3
+17,faible,weak,thin,balding,beautiful,20,1
+18,récrire,to know someone,to rewrite,to hold,to arrive; to happen,20,2
+19,beurre,raspberry,butter,vegetables,mustard,20,2
+20,induire,to abstain,to hang; to suspend,to mislead,to die,20,3
+21,rougir,to blush; to turn red,to begin; to start,to talk; to speak,to discover,20,1
+22,French Synonym,ok,ok,ok,ok,5,"1,2,3,4"
+23,sous,avant,avec,devant,dessous,20,4
+24,porche,patio,appartement,étagère,affiche,20,1
+25,affaibli,dégarni,beau,grand,faible,20,4
+26,hâte,fâché,grincheux,enthousiaste,béat,20,3
+27,stupéfié,envieux,étourdi,excité,incertain,20,2
+28,French Antonym,ok,ok,ok,ok,5,"1,2,3,4"
+29,introverti,laborieux,intègre,clair,sérieux,20,3
+30,mince,moche,chauve,grand,gros,20,4
+31,grand,petit,beau,athlétique,gros,20,1
+32,près,est,loin,gauche,bas,20,2
+33,heureux,fier,affligé,assuré,fatigué,20,2
+34,Conjugate Verb,ok,ok,ok,ok,5,"1,2,3,4"
+35,"correspondre, il",correspond,correspoient,correspoède,correspondit,20,1
+36,"parvenir, nous",parvènons,parvenissons,parvennons,parvenons,20,4
+37,"reconduire, il",recondui,reconduiie,reconduit,recondient,20,1
+38,"revenir, tu",reviens,reveies,revenis,revennes,20,1
+39,"récrire, vous",récrivez,récrisez,récriiez,récriez,20,1
+40,"conduire, ils",conduiissent,conduiient,conduisent,condiennent,20,3
+41,"reconduire, vous",reconduivez,recondèiez,recondenez,reconduisez,20,4
+42,"prédire, ils",préèient,prédiient,prédisent,préiennent,20,3
+43,"réduire, il",rédui,réduiie,rédèie,réduiit,20,1
+44,"sortir, nous",sorions,sortissons,soètons,sortons,20,4
