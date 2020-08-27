@@ -64,10 +64,10 @@ doctor,{'médecin(e)'},set(),careers
 engineer,{'ingénieur(e)'},set(),careers
 lawyer,{'avocat(e)'},set(),careers
 judge,{'juge'},set(),careers
-teacher ,"{'éducateur(e)', 'enseignant(e)'}",set(),careers
+teacher ,"{'enseignant(e)', 'éducateur(e)'}",set(),careers
 professor,{'professeur(e)'},set(),careers
 actor,{'acteur'},set(),careers
-to cook,"{'cuire', 'cuisiner', 'faire la cuisine'}",set(),chores
+to cook,"{'cuisiner', 'cuire', 'faire la cuisine'}",set(),chores
 to do laundry,{'faire la lessive'},set(),chores
 to do the shopping,{'faire les courses'},set(),chores
 to make the bed,{'faire le lit'},set(),chores
@@ -87,40 +87,40 @@ up,{'haut'},{'bas'},directions
 down,{'bas'},{'haut'},directions
 near,{'près'},{'loin'},directions
 far,{'loin'},{'près'},directions
-amazed,"{'étonné', 'ébahi', 'ahuri', 'surpris', 'stupéfait'}","{'posé', 'serein', 'indifférent', 'calme', 'impartial', 'tranquille', 'détaché'}",feelings
-angry,"{'irrité', 'en colère', 'fâché', 'furieux'}","{'posé', 'indifférent', 'joyeux', 'content', 'béat', 'serein', 'ravi', 'satisfait', 'calme', 'enthousiaste', 'impartial', 'tranquille', 'détaché', 'enjoué', 'heureux', 'jovial', 'gai', 'enchanté'}",feelings
-annoyed,"{'irrité', 'agacé', 'mécontent', 'embêté', 'énervé', 'ennuyé'}","{'posé', 'indifférent', 'joyeux', 'content', 'béat', 'serein', 'ravi', 'satisfait', 'calme', 'enthousiaste', 'impartial', 'tranquille', 'détaché', 'enjoué', 'heureux', 'jovial', 'gai', 'enchanté'}",feelings
-ashamed,"{'honteux', 'timide', 'déconfit'}","{'certain', 'assuré', 'posé', 'serein', 'indifférent', 'sûr', 'calme', 'impartial', 'tranquille', 'détaché', 'orgueilleux', 'confiant', 'fier'}",feelings
+amazed,"{'surpris', 'stupéfait', 'ahuri', 'étonné', 'ébahi'}","{'tranquille', 'posé', 'serein', 'impartial', 'détaché', 'indifférent', 'calme'}",feelings
+angry,"{'furieux', 'en colère', 'fâché', 'irrité'}","{'heureux', 'content', 'enthousiaste', 'jovial', 'détaché', 'joyeux', 'enjoué', 'gai', 'tranquille', 'posé', 'ravi', 'satisfait', 'serein', 'impartial', 'indifférent', 'béat', 'calme', 'enchanté'}",feelings
+annoyed,"{'énervé', 'ennuyé', 'embêté', 'irrité', 'mécontent', 'agacé'}","{'heureux', 'content', 'enthousiaste', 'jovial', 'détaché', 'joyeux', 'enjoué', 'gai', 'tranquille', 'posé', 'ravi', 'satisfait', 'serein', 'impartial', 'indifférent', 'béat', 'calme', 'enchanté'}",feelings
+ashamed,"{'déconfit', 'timide', 'honteux'}","{'tranquille', 'posé', 'orgueilleux', 'assuré', 'serein', 'sûr', 'impartial', 'détaché', 'indifférent', 'calme', 'certain', 'confiant', 'fier'}",feelings
 bored,{'ennuyé'},{'occupé'},feelings
 busy,{'occupé'},{'ennuyé'},feelings
-calm,"{'tranquille', 'posé', 'serein', 'calme'}","{'étonné', 'énergique', 'anxieux', 'frustré', 'craintif', 'joyeux', 'inquiet', 'furieux', 'déconfit', 'timide', 'honteux', 'animé', 'content', 'béat', 'mécontent', 'pressé', 'impatient', 'surpris', 'énervé', 'embarrassé', 'jaloux', 'enthousiaste', 'sombre', 'heureux', 'livide', 'terrifié', 'jovial', 'gai', 'douleureux', 'désolé', 'découragé', 'ébahi', 'tendu', 'navré', 'actif', 'stupéfait', 'morose', 'effrayé', 'stupéfié', 'emballé', 'agité', 'horrifié', 'en colère', 'hâte', 'excité', 'apeuré', 'nerveux', 'irrité', 'fâché', 'agacé', 'ravi', 'ahuri', 'satisfait', 'embêté', 'gêné', 'envieux', 'étourdi', 'enjoué', 'abasourdi', 'affligé', 'triste', 'enchanté', 'peureux'}",feelings
-cheerful,"{'joyeux', 'enjoué', 'jovial', 'gai', 'content'}","{'posé', 'serein', 'indifférent', 'calme', 'grincheux', 'impartial', 'tranquille', 'détaché', 'morose', 'sombre', 'bougon', 'triste', 'grognon', 'douleureux', 'découragé'}",feelings
-confident,"{'certain', 'assuré', 'sûr', 'confiant'}","{'incertain', 'hésitant'}",feelings
+calm,"{'tranquille', 'posé', 'calme', 'serein'}","{'livide', 'stupéfait', 'triste', 'jovial', 'déconfit', 'joyeux', 'mécontent', 'étourdi', 'ahuri', 'nerveux', 'désolé', 'enjoué', 'surpris', 'en colère', 'satisfait', 'apeuré', 'pressé', 'peureux', 'anxieux', 'embêté', 'effrayé', 'inquiet', 'craintif', 'enchanté', 'morose', 'abasourdi', 'envieux', 'heureux', 'emballé', 'content', 'fâché', 'enthousiaste', 'excité', 'animé', 'furieux', 'terrifié', 'agité', 'navré', 'actif', 'stupéfié', 'découragé', 'timide', 'ébahi', 'gai', 'énervé', 'embarrassé', 'frustré', 'impatient', 'tendu', 'ravi', 'jaloux', 'horrifié', 'irrité', 'douleureux', 'sombre', 'gêné', 'béat', 'étonné', 'honteux', 'hâte', 'énergique', 'affligé', 'agacé'}",feelings
+cheerful,"{'content', 'jovial', 'joyeux', 'enjoué', 'gai'}","{'tranquille', 'posé', 'grognon', 'serein', 'bougon', 'triste', 'impartial', 'détaché', 'douleureux', 'sombre', 'indifférent', 'grincheux', 'calme', 'morose', 'découragé'}",feelings
+confident,"{'confiant', 'sûr', 'assuré', 'certain'}","{'incertain', 'hésitant'}",feelings
 confused,"{'confus', 'désorienté', 'embrouillé'}",{'lucide'},feelings
-delighted,"{'ravi', 'enthousiaste', 'enchanté'}","{'posé', 'serein', 'navré', 'indifférent', 'découragé', 'calme', 'impartial', 'tranquille', 'détaché', 'morose', 'sombre', 'affligé', 'triste', 'douleureux', 'désolé'}",feelings
-"distressed, sorry","{'triste', 'navré', 'désolé', 'affligé'}","{'enchanté', 'posé', 'indifférent', 'joyeux', 'orgueilleux', 'fier', 'content', 'béat', 'serein', 'satisfait', 'calme', 'impartial', 'tranquille', 'détaché', 'heureux', 'gai'}",feelings
-embarrassed,"{'embarrassé', 'inquiet', 'gêné'}","{'certain', 'assuré', 'posé', 'serein', 'indifférent', 'sûr', 'calme', 'impartial', 'tranquille', 'détaché', 'orgueilleux', 'confiant', 'fier'}",feelings
-excited,"{'enthousiaste', 'emballé', 'agité', 'hâte', 'excité'}","{'posé', 'serein', 'indifférent', 'calme', 'impartial', 'tranquille', 'détaché', 'ennuyé', 'hésitant'}",feelings
+delighted,"{'enchanté', 'enthousiaste', 'ravi'}","{'tranquille', 'posé', 'serein', 'triste', 'impartial', 'détaché', 'douleureux', 'sombre', 'indifférent', 'calme', 'navré', 'morose', 'affligé', 'découragé', 'désolé'}",feelings
+"distressed, sorry","{'navré', 'affligé', 'triste', 'désolé'}","{'heureux', 'content', 'orgueilleux', 'détaché', 'joyeux', 'gai', 'tranquille', 'posé', 'satisfait', 'serein', 'impartial', 'indifférent', 'béat', 'calme', 'enchanté', 'fier'}",feelings
+embarrassed,"{'gêné', 'embarrassé', 'inquiet'}","{'tranquille', 'posé', 'orgueilleux', 'assuré', 'serein', 'sûr', 'impartial', 'détaché', 'indifférent', 'calme', 'certain', 'confiant', 'fier'}",feelings
+excited,"{'enthousiaste', 'excité', 'agité', 'hâte', 'emballé'}","{'tranquille', 'posé', 'ennuyé', 'hésitant', 'serein', 'impartial', 'détaché', 'indifférent', 'calme'}",feelings
 exhausted,"{'épuisé', 'tari', 'fatigué', 'crevé'}",{'énergique'},feelings
-frustrated,{'frustré'},"{'béat', 'posé', 'serein', 'indifférent', 'satisfait', 'joyeux', 'calme', 'impartial', 'tranquille', 'détaché', 'heureux', 'gai', 'enchanté', 'content'}",feelings
-grumpy,"{'grincheux', 'grognon', 'bougon'}","{'posé', 'serein', 'indifférent', 'joyeux', 'calme', 'impartial', 'tranquille', 'détaché', 'enjoué', 'jovial', 'gai', 'content'}",feelings
-happy,"{'enchanté', 'joyeux', 'heureux', 'gai', 'content'}","{'posé', 'navré', 'frustré', 'indifférent', 'déconfit', 'bougon', 'morose', 'honteux', 'timide', 'grognon', 'irrité', 'mécontent', 'agacé', 'serein', 'découragé', 'énervé', 'embêté', 'calme', 'jaloux', 'impartial', 'détaché', 'grincheux', 'envieux', 'sombre', 'tranquille', 'ennuyé', 'affligé', 'triste', 'douleureux', 'désolé'}",feelings
-hesitant,{'hésitant'},"{'certain', 'assuré', 'sûr', 'confiant'}",feelings
-horrified,"{'horrifié', 'effrayé', 'terrifié'}","{'certain', 'assuré', 'posé', 'serein', 'indifférent', 'sûr', 'calme', 'impartial', 'tranquille', 'détaché', 'confiant'}",feelings
-hyper(active),"{'actif', 'animé', 'excité', 'énergique'}","{'posé', 'serein', 'indifférent', 'calme', 'impartial', 'tranquille', 'détaché'}",feelings
-indifferent,"{'indifférent', 'impartial', 'détaché'}","{'étonné', 'énergique', 'anxieux', 'frustré', 'craintif', 'joyeux', 'inquiet', 'furieux', 'déconfit', 'timide', 'honteux', 'animé', 'content', 'béat', 'mécontent', 'pressé', 'impatient', 'surpris', 'énervé', 'embarrassé', 'jaloux', 'enthousiaste', 'sombre', 'heureux', 'livide', 'terrifié', 'jovial', 'gai', 'douleureux', 'désolé', 'découragé', 'ébahi', 'tendu', 'navré', 'actif', 'stupéfait', 'morose', 'effrayé', 'stupéfié', 'emballé', 'agité', 'horrifié', 'en colère', 'hâte', 'excité', 'apeuré', 'nerveux', 'irrité', 'fâché', 'agacé', 'ravi', 'ahuri', 'satisfait', 'embêté', 'gêné', 'envieux', 'étourdi', 'enjoué', 'abasourdi', 'affligé', 'triste', 'enchanté', 'peureux'}",feelings
-irritated,"{'irrité', 'agacé', 'ennuyé', 'énervé'}","{'béat', 'posé', 'serein', 'indifférent', 'satisfait', 'joyeux', 'calme', 'impartial', 'tranquille', 'détaché', 'heureux', 'gai', 'enchanté', 'content'}",feelings
-jealous,"{'jaloux', 'envieux'}","{'béat', 'posé', 'serein', 'indifférent', 'satisfait', 'joyeux', 'calme', 'impartial', 'tranquille', 'détaché', 'heureux', 'gai', 'enchanté', 'content'}",feelings
-lonely,"{'solitaire', 'seul', 'séparé', 'isolé'}","{'accepté', 'admis'}",feelings
-lucid,{'lucide'},"{'étonné', 'embrouillé', 'confus', 'stupéfait', 'étourdi', 'stupéfié', 'abasourdi', 'désorienté'}",feelings
-nervous,"{'tendu', 'anxieux', 'énervé', 'inquiet', 'agité', 'nerveux'}","{'posé', 'serein', 'indifférent', 'calme', 'impartial', 'tranquille', 'détaché'}",feelings
-pleased,"{'satisfait', 'béat', 'heureux', 'content'}","{'posé', 'navré', 'frustré', 'indifférent', 'déconfit', 'bougon', 'morose', 'honteux', 'timide', 'grognon', 'irrité', 'mécontent', 'agacé', 'serein', 'découragé', 'énervé', 'embêté', 'calme', 'jaloux', 'impartial', 'détaché', 'grincheux', 'envieux', 'sombre', 'tranquille', 'ennuyé', 'affligé', 'triste', 'douleureux', 'désolé'}",feelings
-proud,"{'orgueilleux', 'fier'}","{'posé', 'serein', 'indifférent', 'inquiet', 'embarrassé', 'calme', 'déconfit', 'impartial', 'tranquille', 'détaché', 'gêné', 'honteux', 'timide'}",feelings
-"rushed, in a hurry","{'impatient', 'pressé'}","{'patient', 'posé', 'serein', 'indifférent', 'calme', 'impartial', 'tranquille', 'détaché'}",feelings
-sad,"{'morose', 'sombre', 'triste', 'douleureux', 'découragé'}","{'béat', 'posé', 'serein', 'indifférent', 'satisfait', 'joyeux', 'calme', 'impartial', 'tranquille', 'détaché', 'heureux', 'gai', 'enchanté', 'content'}",feelings
-scared,"{'craintif', 'effrayé', 'apeuré', 'peureux'}","{'posé', 'serein', 'indifférent', 'calme', 'impartial', 'tranquille', 'détaché'}",feelings
-stunned,"{'étonné', 'stupéfait', 'étourdi', 'stupéfié', 'abasourdi'}","{'posé', 'serein', 'indifférent', 'lucide', 'calme', 'impartial', 'tranquille', 'détaché'}",feelings
-surprised,"{'surpris', 'ébahi', 'étonné'}","{'posé', 'serein', 'indifférent', 'calme', 'impartial', 'tranquille', 'détaché'}",feelings
+frustrated,{'frustré'},"{'heureux', 'tranquille', 'posé', 'content', 'satisfait', 'serein', 'impartial', 'détaché', 'joyeux', 'indifférent', 'béat', 'calme', 'enchanté', 'gai'}",feelings
+grumpy,"{'bougon', 'grincheux', 'grognon'}","{'tranquille', 'posé', 'content', 'serein', 'impartial', 'détaché', 'jovial', 'joyeux', 'indifférent', 'calme', 'enjoué', 'gai'}",feelings
+happy,"{'heureux', 'content', 'joyeux', 'enchanté', 'gai'}","{'ennuyé', 'bougon', 'triste', 'déconfit', 'détaché', 'mécontent', 'grincheux', 'navré', 'découragé', 'désolé', 'timide', 'énervé', 'tranquille', 'posé', 'frustré', 'grognon', 'jaloux', 'serein', 'impartial', 'embêté', 'irrité', 'douleureux', 'sombre', 'indifférent', 'calme', 'honteux', 'morose', 'affligé', 'agacé', 'envieux'}",feelings
+hesitant,{'hésitant'},"{'confiant', 'sûr', 'assuré', 'certain'}",feelings
+horrified,"{'terrifié', 'horrifié', 'effrayé'}","{'tranquille', 'posé', 'assuré', 'serein', 'sûr', 'impartial', 'détaché', 'indifférent', 'calme', 'certain', 'confiant'}",feelings
+hyper(active),"{'excité', 'animé', 'actif', 'énergique'}","{'tranquille', 'posé', 'serein', 'impartial', 'détaché', 'indifférent', 'calme'}",feelings
+indifferent,"{'indifférent', 'détaché', 'impartial'}","{'livide', 'stupéfait', 'triste', 'jovial', 'déconfit', 'joyeux', 'mécontent', 'étourdi', 'ahuri', 'nerveux', 'désolé', 'enjoué', 'surpris', 'en colère', 'satisfait', 'apeuré', 'pressé', 'peureux', 'anxieux', 'embêté', 'effrayé', 'inquiet', 'craintif', 'enchanté', 'morose', 'abasourdi', 'envieux', 'heureux', 'emballé', 'content', 'fâché', 'enthousiaste', 'excité', 'animé', 'furieux', 'terrifié', 'agité', 'navré', 'actif', 'stupéfié', 'découragé', 'timide', 'ébahi', 'gai', 'énervé', 'embarrassé', 'frustré', 'impatient', 'tendu', 'ravi', 'jaloux', 'horrifié', 'irrité', 'douleureux', 'sombre', 'gêné', 'béat', 'étonné', 'honteux', 'hâte', 'énergique', 'affligé', 'agacé'}",feelings
+irritated,"{'énervé', 'ennuyé', 'agacé', 'irrité'}","{'heureux', 'tranquille', 'posé', 'content', 'satisfait', 'serein', 'impartial', 'détaché', 'joyeux', 'indifférent', 'béat', 'calme', 'enchanté', 'gai'}",feelings
+jealous,"{'jaloux', 'envieux'}","{'heureux', 'tranquille', 'posé', 'content', 'satisfait', 'serein', 'impartial', 'détaché', 'joyeux', 'indifférent', 'béat', 'calme', 'enchanté', 'gai'}",feelings
+lonely,"{'seul', 'séparé', 'solitaire', 'isolé'}","{'admis', 'accepté'}",feelings
+lucid,{'lucide'},"{'confus', 'stupéfait', 'désorienté', 'étourdi', 'embrouillé', 'étonné', 'stupéfié', 'abasourdi'}",feelings
+nervous,"{'énervé', 'tendu', 'anxieux', 'inquiet', 'agité', 'nerveux'}","{'tranquille', 'posé', 'serein', 'impartial', 'détaché', 'indifférent', 'calme'}",feelings
+pleased,"{'heureux', 'content', 'satisfait', 'béat'}","{'ennuyé', 'bougon', 'triste', 'déconfit', 'détaché', 'mécontent', 'grincheux', 'navré', 'découragé', 'désolé', 'timide', 'énervé', 'tranquille', 'posé', 'frustré', 'grognon', 'jaloux', 'serein', 'impartial', 'embêté', 'irrité', 'douleureux', 'sombre', 'indifférent', 'calme', 'honteux', 'morose', 'affligé', 'agacé', 'envieux'}",feelings
+proud,"{'fier', 'orgueilleux'}","{'tranquille', 'posé', 'serein', 'impartial', 'détaché', 'déconfit', 'gêné', 'indifférent', 'calme', 'honteux', 'inquiet', 'timide', 'embarrassé'}",feelings
+"rushed, in a hurry","{'pressé', 'impatient'}","{'tranquille', 'posé', 'serein', 'impartial', 'détaché', 'indifférent', 'calme', 'patient'}",feelings
+sad,"{'triste', 'douleureux', 'sombre', 'morose', 'découragé'}","{'heureux', 'tranquille', 'posé', 'content', 'satisfait', 'serein', 'impartial', 'détaché', 'joyeux', 'indifférent', 'béat', 'calme', 'enchanté', 'gai'}",feelings
+scared,"{'peureux', 'apeuré', 'craintif', 'effrayé'}","{'tranquille', 'posé', 'serein', 'impartial', 'détaché', 'indifférent', 'calme'}",feelings
+stunned,"{'stupéfait', 'étourdi', 'étonné', 'stupéfié', 'abasourdi'}","{'tranquille', 'posé', 'lucide', 'serein', 'impartial', 'détaché', 'indifférent', 'calme'}",feelings
+surprised,"{'ébahi', 'étonné', 'surpris'}","{'tranquille', 'posé', 'serein', 'impartial', 'détaché', 'indifférent', 'calme'}",feelings
 tired,"{'fatigué', 'crevé'}",{'énergique'},feelings
 to be hungry,{'avoir faim'},set(),food
 to eat,{'manger'},set(),food
@@ -133,7 +133,7 @@ to have dinner,{'dîner'},set(),food
 after-school snack,{'goûter'},set(),food
 to taste,{'goûter'},set(),food
 "appetizer, starter","{""hors d'œuvre"", 'entrée'}",set(),food
-soup,"{'soupe', 'potage'}",set(),food
+soup,"{'potage', 'soupe'}",set(),food
 main course,{'plat principal'},set(),food
 salad,{'salade'},set(),food
 dessert,{'dessert'},set(),food
@@ -245,8 +245,8 @@ window,{'fenêtre'},set(),house
 furniture,{'meuble'},set(),house
 carpet,{'moquette'},set(),house
 wall,{'mur'},set(),house
-floor,"{'sol', 'parquet'}",set(),house
-patio,"{'porche', 'patio'}",set(),house
+floor,"{'parquet', 'sol'}",set(),house
+patio,"{'patio', 'porche'}",set(),house
 ceiling,{'plafond'},set(),house
 door,{'porte'},set(),house
 curtain,{'rideau'},set(),house
@@ -263,7 +263,7 @@ microwave,{'four à micro-ondes'},set(),house
 refrigerator,{'réfrigérateur'},set(),house
 chair,{'chaise'},set(),house
 table,{'table'},set(),house
-"den, living room","{'salle de séjour', 'salon'}",set(),house
+"den, living room","{'salon', 'salle de séjour'}",set(),house
 couch,{'canapé'},set(),house
 stereo,{'chaîne stéréo'},set(),house
 television,{'télévision'},set(),house
@@ -272,7 +272,7 @@ poster,{'affiche'},set(),house
 (book)shelf,{'étagère'},set(),house
 printer,{'imprimante'},set(),house
 lamp,{'lampe'},set(),house
-computer,"{'ordinateur', 'ordi'}",set(),house
+computer,"{'ordi', 'ordinateur'}",set(),house
 telephone,{'téléphone'},set(),house
 bedroom,{'chambre'},set(),house
 closet,{'armoire'},set(),house
@@ -285,7 +285,7 @@ water closet (room with a toilet),"{'toilettes', 'le WC'}",set(),house
 bathtub,"{'bain', 'baignoire'}",set(),house
 shower,{'douche'},set(),house
 bathroom sink,{'lavabo'},set(),house
-mirror,"{'glace', 'miroir'}",set(),house
+mirror,"{'miroir', 'glace'}",set(),house
 attack,{'attaque'},set(),military
 fighter jet,{'chasseur'},set(),military
 cease fire,{'trêve'},set(),military
@@ -320,68 +320,68 @@ ocean,{'océan'},set(),nature
 plant,{'plante'},set(),nature
 river,"{'rivière', 'fleuve'}",set(),nature
 sea,{'mer'},set(),nature
-shore,"{'bord de mer', 'plage'}",set(),nature
+shore,"{'plage', 'bord de mer'}",set(),nature
 soil,{'sol'},set(),nature
 tree,{'arbre'},set(),nature
 waterfalls,{'cascade'},set(),nature
 weed,{'mauvaise herbe'},set(),nature
-apathetic,"{'amorphe', 'nonchalant', 'apathique'}","{'émotive', 'enthousiaste', 'fervent', 'passionné'}",personalities
-boring,"{'fatiguant', 'ennuyeux'}","{'amusant', 'intéressant', 'piquant'}",personalities
-brave,"{'hardi', 'fort', 'courageux'}","{'timide', 'craintif', 'lâche'}",personalities
-charming,"{'charmant', 'gracieux', 'charismatique', 'séduisant'}","{'monstrueux', 'répulsif', 'abominable', 'dégoûtant', 'repoussant', 'laid'}",personalities
-cowardly,"{'froussard', 'lâche', 'mou', 'peureux'}","{'hardi', 'audacieux', 'brave', 'courageux'}",personalities
-creative,"{'créatif', 'inventif'}","{'prévisible', 'répétitive', 'banal'}",personalities
+apathetic,"{'amorphe', 'apathique', 'nonchalant'}","{'émotive', 'enthousiaste', 'fervent', 'passionné'}",personalities
+boring,"{'fatiguant', 'ennuyeux'}","{'intéressant', 'amusant', 'piquant'}",personalities
+brave,"{'fort', 'hardi', 'courageux'}","{'lâche', 'timide', 'craintif'}",personalities
+charming,"{'séduisant', 'gracieux', 'charmant', 'charismatique'}","{'laid', 'dégoûtant', 'repoussant', 'abominable', 'répulsif', 'monstrueux'}",personalities
+cowardly,"{'mou', 'lâche', 'peureux', 'froussard'}","{'hardi', 'audacieux', 'brave', 'courageux'}",personalities
+creative,"{'inventif', 'créatif'}","{'répétitive', 'prévisible', 'banal'}",personalities
 "cunning, shrewd","{'malin', 'futé'}","{'honnête', 'inintellilgent', 'naïf'}",personalities
-energetic,"{'dynamique', 'énergique', 'vivant', 'vif', 'animé'}","{'léthargique', 'sans vie'}",personalities
-friendly,"{'sympa', 'cordial', 'amical', 'chaleureux', 'affectueux', 'sympathique'}","{'indifférent', 'froid', 'hostile', 'insensible', 'impoli', 'inamical'}",personalities
-funny,"{'drôle', 'amusant', 'plaisant', 'comique'}","{'sérieux', 'grave', 'ennuyeux', 'terne'}",personalities
-hard-working,"{'appliqué', 'laborieux', 'diligent', 'zélé', 'travailleur'}","{'fainéant', 'indolent', 'paresseux'}",personalities
-honest,"{'loyal', 'honnête', 'moral', 'intègre', 'droit', 'franc'}","{'malhonnête', 'sournois', 'perfide', 'déloyal'}",personalities
-impatient,"{'impatient', 'ardent', 'nerveux', 'vif'}","{'patient', 'constant', 'acharné', 'persévérant', 'dur'}",personalities
+energetic,"{'animé', 'dynamique', 'vif', 'énergique', 'vivant'}","{'léthargique', 'sans vie'}",personalities
+friendly,"{'chaleureux', 'sympa', 'amical', 'affectueux', 'cordial', 'sympathique'}","{'insensible', 'froid', 'hostile', 'impoli', 'inamical', 'indifférent'}",personalities
+funny,"{'amusant', 'plaisant', 'drôle', 'comique'}","{'terne', 'grave', 'sérieux', 'ennuyeux'}",personalities
+hard-working,"{'appliqué', 'laborieux', 'diligent', 'zélé', 'travailleur'}","{'paresseux', 'fainéant', 'indolent'}",personalities
+honest,"{'honnête', 'moral', 'intègre', 'droit', 'franc', 'loyal'}","{'sournois', 'perfide', 'malhonnête', 'déloyal'}",personalities
+impatient,"{'nerveux', 'impatient', 'vif', 'ardent'}","{'dur', 'acharné', 'persévérant', 'constant', 'patient'}",personalities
 interesting,"{'intéressant', 'piquant'}","{'fatiguant', 'ennuyeux'}",personalities
-kind,"{'doux', 'aimable', 'bon', 'gracieux', 'gentil', 'affable'}","{'mauvais', 'désagréable', 'méchant', 'cruel'}",personalities
-lazy,"{'indolent', 'paresseux', 'mou', 'lent', 'fainéant'}","{'appliqué', 'laborieux', 'diligent', 'zélé', 'travailleur'}",personalities
-loyal,"{'loyal', 'fidèle', 'dévoué'}","{'infidèle', 'traître', 'perfide', 'déloyal'}",personalities
-mean,"{'mauvais', 'désagréable', 'méchant', 'cruel'}","{'doux', 'aimable', 'bon', 'gracieux', 'gentil', 'affable'}",personalities
-naive,"{'simple', 'naïf', 'niais', 'innocent'}","{'expérimenté', 'éprouvé', 'rusé', 'astucieux'}",personalities
-nice,"{'agréable', 'sympa', 'aimable', 'gracieux', 'acceuillant', 'sympathique'}","{'mauvais', 'désagréable', 'méchant', 'cruel'}",personalities
-outgoing,"{'clair', 'ouvert', 'vif', 'franc', 'sortant'}","{'craintif', 'vague', 'incertain', 'indécis', 'introverti', 'timide'}",personalities
-patient,"{'patient', 'constant', 'acharné', 'persévérant', 'dur'}","{'impatient', 'ardent', 'nerveux', 'vif'}",personalities
-patriotic,"{'patriotique', 'nationaliste', 'civique'}",{'traître'},personalities
-playful,"{'blagueur', 'taquin', 'moqueur', 'facétieux', 'farceur'}","{'sérieux', 'grave', 'ennuyeux', 'terne'}",personalities
-quirky,"{'bizarre', 'original', 'excentrique', 'extravagant', 'fou'}","{'sérieux', 'grave', 'ennuyeux', 'terne'}",personalities
-serious,"{'sérieux', 'grave', 'posé', 'calme'}","{'bizarre', 'blagueur', 'original', 'excentrique', 'taquin', 'moqueur', 'extravagant', 'facétieux', 'farceur', 'fou'}",personalities
-shy,"{'craintif', 'vague', 'incertain', 'indécis', 'introverti', 'timide'}","{'clair', 'ouvert', 'vif', 'franc', 'sortant'}",personalities
-smart,"{'intelligent', 'perçant', 'pénétrant', 'habile'}","{'stupide', 'sot', 'idiot', 'niais', 'dinde', 'ballot', 'bête'}",personalities
-snobbish,"{'poseur', 'snob', 'affecté', 'sélect', 'mondain'}","{'humble', 'sympa', 'cordial', 'amical', 'chaleureux', 'modéré', 'modeste', 'affectueux', 'sympathique'}",personalities
-sophisticated,"{'chic', 'raffiné', 'élégant'}","{'simple', 'naïf', 'rustre', 'innocent', 'niais', 'grossier'}",personalities
-studious,"{'studieux', 'zélé', 'appliqué'}","{'fainéant', 'frivole', 'indolent', 'paresseux'}",personalities
-stupid,"{'stupide', 'sot', 'idiot', 'niais', 'dinde', 'ballot', 'bête'}","{'intelligent', 'perçant', 'pénétrant', 'habile'}",personalities
-unfriendly,"{'indifférent', 'froid', 'hostile', 'insensible', 'impoli', 'inamical'}","{'sympa', 'cordial', 'amical', 'chaleureux', 'affectueux', 'sympathique'}",personalities
-well-behaved,"{'prudent', 'sage', 'raisonnable', 'calme', 'bon', 'sérieux', 'réservé'}","{'mal comporté', 'indiscipliné', 'désobéissant', 'rebelle', 'désordonné'}",personalities
+kind,"{'aimable', 'bon', 'affable', 'gentil', 'doux', 'gracieux'}","{'cruel', 'mauvais', 'désagréable', 'méchant'}",personalities
+lazy,"{'lent', 'paresseux', 'mou', 'fainéant', 'indolent'}","{'appliqué', 'laborieux', 'diligent', 'zélé', 'travailleur'}",personalities
+loyal,"{'fidèle', 'dévoué', 'loyal'}","{'infidèle', 'traître', 'perfide', 'déloyal'}",personalities
+mean,"{'cruel', 'mauvais', 'désagréable', 'méchant'}","{'aimable', 'bon', 'affable', 'gentil', 'doux', 'gracieux'}",personalities
+naive,"{'innocent', 'niais', 'simple', 'naïf'}","{'expérimenté', 'éprouvé', 'astucieux', 'rusé'}",personalities
+nice,"{'sympa', 'aimable', 'gracieux', 'acceuillant', 'agréable', 'sympathique'}","{'cruel', 'mauvais', 'désagréable', 'méchant'}",personalities
+outgoing,"{'sortant', 'ouvert', 'vif', 'clair', 'franc'}","{'incertain', 'vague', 'craintif', 'indécis', 'timide', 'introverti'}",personalities
+patient,"{'dur', 'acharné', 'persévérant', 'constant', 'patient'}","{'nerveux', 'impatient', 'vif', 'ardent'}",personalities
+patriotic,"{'civique', 'nationaliste', 'patriotique'}",{'traître'},personalities
+playful,"{'farceur', 'facétieux', 'blagueur', 'moqueur', 'taquin'}","{'terne', 'grave', 'sérieux', 'ennuyeux'}",personalities
+quirky,"{'fou', 'excentrique', 'bizarre', 'original', 'extravagant'}","{'terne', 'grave', 'sérieux', 'ennuyeux'}",personalities
+serious,"{'posé', 'sérieux', 'grave', 'calme'}","{'fou', 'farceur', 'excentrique', 'facétieux', 'blagueur', 'bizarre', 'original', 'extravagant', 'moqueur', 'taquin'}",personalities
+shy,"{'incertain', 'vague', 'craintif', 'indécis', 'timide', 'introverti'}","{'sortant', 'ouvert', 'vif', 'clair', 'franc'}",personalities
+smart,"{'habile', 'pénétrant', 'perçant', 'intelligent'}","{'bête', 'dinde', 'stupide', 'idiot', 'sot', 'niais', 'ballot'}",personalities
+snobbish,"{'mondain', 'affecté', 'sélect', 'snob', 'poseur'}","{'sympa', 'chaleureux', 'amical', 'humble', 'affectueux', 'modéré', 'cordial', 'modeste', 'sympathique'}",personalities
+sophisticated,"{'chic', 'raffiné', 'élégant'}","{'innocent', 'naïf', 'niais', 'rustre', 'grossier', 'simple'}",personalities
+studious,"{'appliqué', 'studieux', 'zélé'}","{'paresseux', 'frivole', 'fainéant', 'indolent'}",personalities
+stupid,"{'bête', 'dinde', 'stupide', 'idiot', 'sot', 'niais', 'ballot'}","{'habile', 'pénétrant', 'perçant', 'intelligent'}",personalities
+unfriendly,"{'insensible', 'froid', 'hostile', 'impoli', 'inamical', 'indifférent'}","{'chaleureux', 'sympa', 'amical', 'affectueux', 'cordial', 'sympathique'}",personalities
+well-behaved,"{'sage', 'bon', 'prudent', 'calme', 'raisonnable', 'réservé', 'sérieux'}","{'désobéissant', 'mal comporté', 'désordonné', 'rebelle', 'indiscipliné'}",personalities
 athletic,{'athlétique'},set(),phys_description
 bald,{'chauve'},set(),phys_description
 balding,{'dégarni'},set(),phys_description
-beautiful,{'beau'},"{'moche', 'laid'}",phys_description
+beautiful,{'beau'},"{'laid', 'moche'}",phys_description
 fat,{'gros'},"{'mince', 'maigre'}",phys_description
-handsome,"{'beau', 'joli'}","{'moche', 'laid'}",phys_description
-pretty,{'joli'},"{'moche', 'laid'}",phys_description
+handsome,"{'joli', 'beau'}","{'laid', 'moche'}",phys_description
+pretty,{'joli'},"{'laid', 'moche'}",phys_description
 short,{'petit'},{'grand'},phys_description
 skinny,"{'mince', 'maigre'}",{'gros'},phys_description
 strong,{'fort'},"{'faible', 'affaibli'}",phys_description
 tall,{'grand'},{'petit'},phys_description
 thin,"{'mince', 'maigre'}",{'gros'},phys_description
-ugly,"{'moche', 'laid'}",set(),phys_description
+ugly,"{'laid', 'moche'}",set(),phys_description
 weak,"{'faible', 'affaibli'}",{'fort'},phys_description
 "to, at, in",{'à'},set(),prepositions
 after,{'après'},{'avant'},prepositions
 before,{'avant'},"{'suivant', 'après'}",prepositions
 with,{'avec'},"{'sans', 'contre'}",prepositions
 "at the home/office of, among",{'chez'},set(),prepositions
-"against, versus",{'contre'},"{'pour', 'avec'}",prepositions
+"against, versus",{'contre'},"{'avec', 'pour'}",prepositions
 in,{'dans'},"{'dehors', 'hors'}",prepositions
 "from, of, about",{'de'},set(),prepositions
-"since, for",{'depuis'},"{'jusque', 'à'}",prepositions
+"since, for",{'depuis'},"{'à', 'jusque'}",prepositions
 "in back of, behind",{'derrière'},{'devant'},prepositions
 in front of,{'devant'},{'derrière'},prepositions
 "during, while",{'durant'},set(),prepositions
@@ -389,7 +389,7 @@ in front of,{'devant'},{'derrière'},prepositions
 between,{'entre'},{'hors'},prepositions
 toward,{'envers'},set(),prepositions
 "approximately, around",{'environ'},"{'exactement', 'précisément'}",prepositions
-"without, except, outside",{'hors'},"{'entre', 'dedans', 'dans', 'chez', 'en'}",prepositions
+"without, except, outside",{'hors'},"{'entre', 'chez', 'en', 'dans', 'dedans'}",prepositions
 "until, up to",{'jusque'},{'depuis'},prepositions
 despite,{'malgré'},{'grâce à'},prepositions
 "by, through",{'par'},set(),prepositions
@@ -398,8 +398,8 @@ during,{'pendant'},set(),prepositions
 for,{'pour'},{'contre'},prepositions
 without,{'sans'},{'avec'},prepositions
 except,{'sauf'},set(),prepositions
-according to,"{'suivant', 'selon'}","{'contre', 'avant', 'après'}",prepositions
-under,"{'sous', 'dessous'}","{'dessus', 'sur'}",prepositions
+according to,"{'suivant', 'selon'}","{'avant', 'après', 'contre'}",prepositions
+under,"{'sous', 'dessous'}","{'sur', 'dessus'}",prepositions
 on,{'sur'},"{'dessous', 'sous'}",prepositions
 "toward, near",{'vers'},set(),prepositions
 father,{'père\xa0'},set(),relatives
@@ -415,7 +415,7 @@ half-sister,{'demie-soeur'},set(),relatives
 "step-brother,brother-in-law",{'beau-frère'},set(),relatives
 "step-sister, sister-in-law",{'belle-soeur'},set(),relatives
 grandfather,"{'pépé', 'grand-père'}",set(),relatives
-grandmother,"{'mémé', 'grand-mère'}",set(),relatives
+grandmother,"{'grand-mère', 'mémé'}",set(),relatives
 grandson,{'petit-fils'},set(),relatives
 granddaughter,{'petite-fille'},set(),relatives
 aunt,{'tante'},set(),relatives
@@ -425,8 +425,8 @@ niece,{'nièce'},set(),relatives
 cousin (m.),{'cousin'},set(),relatives
 cousin (f.),{'cousine'},set(),relatives
 relative,{'parent'},set(),relatives
-girlfriend,"{'petite amie', 'amie', 'copine'}",set(),relatives
-boyfriend,"{'ami', 'copain', 'petit ami'}",set(),relatives
+girlfriend,"{'amie', 'copine', 'petite amie'}",set(),relatives
+boyfriend,"{'copain', 'petit ami', 'ami'}",set(),relatives
 wife,"{'femme', 'épouse'}",set(),relatives
 husband,"{'époux', 'mari'}",set(),relatives
 teacher’s desk,{'bureau'},set(),school
