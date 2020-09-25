@@ -1,46 +1,46 @@
 ﻿,Questions,Answer 1,Answer 2,Answer 3,Answer 4,Time,Correct Answer
-0,English To French,ok,ok,ok,ok,5,"1,2,3,4"
-1,lemonade,jus,citron pressé,thee glacé,thé glacé,20,2
-2,champagne,eau du robinet,limonade,citron pressé,champagne,20,4
-3,beer on tap,Orangina,pression,lait,présion,20,2
-4,espresso,apéritif;apéro,express;café,vin,thé,20,2
-5,tea,boissons alcoolisées,pression,Orangina,thé,20,4
-6,foot,pied,doigt,cheville,bouche,20,1
-7,dinner,dînér,salle à manger,dîner,mûre,20,3
-8,funny,farceur,cordial,comique,excentrique,20,3
-9,to sleep some more,récrire,mentir,circonscrire,redormir,20,4
-10,to interrupt,interrompre,guérir,recevoir,investir,20,1
-11,French To English,ok,ok,ok,ok,5,"1,2,3,4"
-12,pastis,beer,anise-flavored apéritif,alcoholic drinks,beer on tap,20,2
-13,eau,juice,tea,alcoholic drinks,water,20,4
-14,eau plate;eau non-gazeuse,still / plain water,hot chocolate,"lemon soda (eg, 7-Up)",herbal tea,20,1
-15,express;café,champagne,"pop, soda, soft drink",espresso,herbal tea,20,3
-16,boissons non alcoolisées,champagne,juice,"cocktail, pre-dinner drink",non-alcoholic drinks,20,4
-17,arriver,to leave,to predict,to sleep ,to arrive; to happen,20,4
-18,moche,ugly,handsome,bald,pretty,20,1
-19,abolir,to intervene,to abolish,to warn; to prevent,to invest,20,2
-20,table,"yard, garden",rug,table,bathroom sink,20,3
-21,abaisser,to shine,to watch; to look at,"to contain, confine",to lower; to push/pull down,20,4
-22,French Synonym,ok,ok,ok,ok,5,"1,2,3,4"
-23,bâtir,construire,redormir,mordre,dire,20,1
-24,drôle,fou,rustre,fidèle,plaisant,20,4
-25,animé,lucide,enjoué,hâte,actif,20,4
-26,ardent,indifférent,intègre,nerveux,indifférènt,20,3
-27,aimable,agréable,snob,froussard,amorphe,20,1
-28,French Antonym,ok,ok,ok,ok,5,"1,2,3,4"
-29,pour,sauf,exactement,suivant,contre,20,4
-30,nord,est,haut,droite,sud,20,4
-31,séparé,détaché,accepté,tari,agité,20,2
-32,inventif,malin,répétitive,inamical,civique,20,2
-33,surpris,calme,effrayé,excité,étourdi,20,1
-34,Conjugate Verb,ok,ok,ok,ok,5,"1,2,3,4"
-35,"lire, il",èie,li,lie,lit,20,4
-36,"féliciter, ils",félicitent,féliciient,félicitissent,félicètent,20,1
-37,"étendre, je",étenie,éteiens,étends,étende,20,3
-38,"manquer, il",manque,manèue,manqu,manqie,20,1
-39,"redire, nous",reenons,reèions,rediions,redisons,20,4
-40,"endormir, vous",endormissez,endormez,endormmez,endoriez,20,2
-41,"parvenir, je",parviens,parves,parvène,parvens,20,1
-42,"pendre, vous",pendsez,pendez,peniez,peèdez,20,2
-43,"franchir, vous",franchhez,franenez,franchez,franchissez,20,4
-44,"luire, vous",luiiez,luisez,luivez,luiez,20,2
+0,English To French,ok,ok,ok,ok,5,"1, 2, 3, 4"
+1,alcoholic drinks,thé,apéritif;apéro,vin,boissons alcoolisées,20,4
+2,wine,vin,lait,bière,express;café,20,1
+3,beer on tap,eau du robinet,boissons non alcoolisées,pression,cidre,20,3
+4,"lemon soda (eg, 7-Up)",soda;boisson gazeuse,cidre,bière,limonade,20,4
+5,champagne,champagne,tisane;infusion,çhampagne,pression,20,1
+6,"sauce, dressing, gravy",avoir faim,carotte,sauce,gâteau,20,3
+7,to share,partager,correspondre,obéir,danser,20,1
+8,jar,plat,argenterie,pot,vase,20,3
+9,arm,bras,genou,orteisl,orteil,20,1
+10,shore,plante,cascade,fleur,bord de mer,20,4
+11,French To English,ok,ok,ok,ok,5,"1, 2, 3, 4"
+12,Orangina,citrus soda,after-dinner drink,lemonade,still / plain water,20,1
+13,champagne,hard cider,champagne,lemonade,tea,20,2
+14,vin,sparkling / mineral water,coffee,wine,beer on tap,20,3
+15,chocolat (chaud) ,milk,iced tea,hot chocolate,hard cider,20,3
+16,jus,juice,"cocktail, pre-dinner drink",coffee,after-dinner drink,20,1
+17,express;café,cola,espresso,tea,coffee,20,2
+18,mur,wall,(book)shelf,printer,telephone,20,1
+19,vaisselle,plate,jar,silverware,"dishes, crockery",20,4
+20,époux,nephew,husband,aunt,mother,20,2
+21,eau gazeuse,milk,iced tea,sparkling / mineral water,beer,20,3
+22,French Synonym,ok,ok,ok,ok,5,"1, 2, 3, 4"
+23,gracieux,chârismatique,rusé,charismatique,traître,20,3
+24,femme,épouse,amie,cousin,père,20,1
+25,persévérant,dur,facétieux,dynamique,audacieux,20,1
+26,cruel,lâche,introverti,désagréable,vivant,20,3
+27,plage,cour,bord de mer,océan,montagnes,20,2
+28,French Antonym,ok,ok,ok,ok,5,"1, 2, 3, 4"
+29,insensible,cordiàl,cordial,désobéissant,inventif,20,2
+30,dessous,dessus,par,jusque,malgré,20,1
+31,loin,prèse,nord,près,bas,20,3
+32,impoli,affectueux,inintellilgent,zélé,affeçtueux,20,1
+33,nord,sud,bas,droite,ssud,20,1
+34,Conjugate Verb,ok,ok,ok,ok,5,"1, 2, 3, 4"
+35,"agir, vous",agissez,aggez,ègez,enez,20,1
+36,"intervenir, il",interven,intervient,intervène,intervet,20,2
+37,"reconstruire, je",reconstruis,reconstruie,reconstruiie,reconstruiis,20,1
+38,"maintenir, nous",maintènons,maintenissons,maintenons,maintennons,20,3
+39,"luire, tu",liens,luis,luiies,luies,20,2
+40,"suspendre, tu",suspends,suspendes,suspenies,suspeiens,20,1
+41,"corrompre, vous",corroèpez,corromppez,corromiez,corrompez,20,4
+42,"cuire, vous",cuisez,cuiissez,cuiiez,cuivez,20,1
+43,"pendre, vous",penddez,pendez,peèdez,peenez,20,2
+44,"répondre, je",réponds,répoiens,réponde,répondde,20,1
