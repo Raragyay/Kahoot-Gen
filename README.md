@@ -17,6 +17,9 @@ with open('top10kwords.pkl', 'rb') as f:
     words_list10k = pickle.load(f)
 ```
 
+I also have a list of unique vocabulary in `Master Pronunciation.csv` that you may find useful. All words there were 
+hand-picked, with the latter ones mostly coming from `top10kwords.pkl`.
+
 ### Todo List
 - [ ] Add configuration file for question types
 - [ ] Extract Notebook into separate script, package as exe
