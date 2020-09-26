@@ -1,10 +1,10 @@
 # French Teaching
 
-A Jupyter Notebook that generates [Kahoot](kahoot.com) questions for French vocabulary and conjugation.
+A Jupyter Notebook that generates [Kahoot](https://kahoot.com) questions for French vocabulary and conjugation.
 
-Most vocabulary was sourced from [Lawless French](lawlessfrench.com). 
-In addition, [Dictionnaire-Synonyme](dictionanaire-synonyme.com) and
-[Google Translate](translate.google.com) were used as sources for synonyms and antonyms for certain words. 
+Most vocabulary was sourced from [Lawless French](https://lawlessfrench.com). 
+In addition, [Dictionnaire-Synonyme](https://dictionnaire-synonyme.com) and
+[Google Translate](https://translate.google.com) were used as sources for synonyms and antonyms for certain words. 
 
 To use, edit the question_entries variable with the type of question and the category you wish to test.
 
