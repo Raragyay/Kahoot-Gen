@@ -1,20 +1,20 @@
 ﻿English,French,Antonym,Category
 non-alcoholic drinks,{'boissons non alcoolisées'},set(),New
 coffee,{'café'},set(),New
-espresso,{'express;café'},set(),New
+espresso,{'express; café'},set(),New
 hot chocolate,{'chocolat (chaud) '},set(),New
 juice,{'jus'},set(),New
 lemonade,{'citron pressé'},set(),New
 milk,{'lait'},set(),New
-"pop, soda, soft drink",{'soda;boisson gazeuse'},set(),New
+"pop, soda, soft drink",{'soda; boisson gazeuse'},set(),New
 citrus soda,{'Orangina'},set(),New
 cola,{'coca'},set(),New
 "lemon soda (eg, 7-Up)",{'limonade'},set(),New
 tea,{'thé'},set(),New
 iced tea,{'thé glacé'},set(),New
-herbal tea,{'tisane;infusion'},set(),New
+herbal tea,{'tisane; infusion'},set(),New
 water,{'eau'},set(),New
-still / plain water,{'eau plate;eau non-gazeuse'},set(),New
+still / plain water,{'eau plate; eau non-gazeuse'},set(),New
 sparkling / mineral water,{'eau gazeuse'},set(),New
 tap water,{'eau du robinet'},set(),New
 alcoholic drinks,{'boissons alcoolisées'},set(),New
@@ -23,7 +23,7 @@ anise-flavored apéritif,{'pastis'},set(),New
 beer,{'bière'},set(),New
 beer on tap,{'pression'},set(),New
 champagne,{'champagne'},set(),New
-"cocktail, pre-dinner drink",{'apéritif;apéro'},set(),New
+"cocktail, pre-dinner drink",{'apéritif; apéro'},set(),New
 hard cider,{'cidre'},set(),New
 wine,{'vin'},set(),New
 body,{'corps'},set(),body
@@ -126,7 +126,7 @@ casserole,{'cocotte'},set(),dishes_and_silverware
 frying pan,{'poêle (à frire)'},set(),dishes_and_silverware
 mold,{'moule'},set(),dishes_and_silverware
 pie plate,{'moule à tarte'},set(),dishes_and_silverware
-pot,{'cocotte;marmite'},set(),dishes_and_silverware
+pot,{'cocotte; marmite'},set(),dishes_and_silverware
 roasting pan,{'plat à rôtir'},set(),dishes_and_silverware
 sauce pan,{'casserole'},set(),dishes_and_silverware
 amazed,"{'étonné', 'stupéfait', 'ahuri', 'surpris', 'ébahi'}","{'serein', 'calme', 'tranquille', 'impartial', 'indifférent', 'posé', 'détaché'}",feelings
