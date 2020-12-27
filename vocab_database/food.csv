@@ -14,9 +14,9 @@ main course,plat principal
 salad,salade
 dessert,dessert
 "kitchen, cooking",cuisine
-dining room,salà manger
+dining room,salle à manger
 restaurant,restaurant
-fruit,les fruits
+fruit,fruits
 apricot,abricot
 pineapple,ananas
 banana,banane
@@ -81,19 +81,14 @@ cream,crème
 sour cream,crème aigre
 cheese,fromage
 cream cheese,fromage blanc
-ice cream,glace
 milk,lait
-yogurt,yaourt
-dessert,dessert
 cookie,biscuit
 candy,bonbons
 chocolate,chocolat
 custard w/ burnt sugar,crème brûlée
 flan,crème caramel
-cheese,fromage
-fruit,fruits
 cake,gâteau
-ice cream,glace
+ice cream,glace; crème glacée
 chocolate mousse,mousse au chocolat
 pie,tarte
 vanilla,vanille

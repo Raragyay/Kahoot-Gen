@@ -10,12 +10,11 @@ window,fenêtre
 furniture,meuble
 carpet,moquette
 wall,mur
-floor,parquet
+floor,parquet; sol
 patio,patio; porche
 ceiling,plafond
 door,porte
 curtain,rideau
-floor,sol
 rug,tapis
 porch,véranda
 room,pièce; salle
@@ -39,7 +38,7 @@ poster,affiche
 (book)shelf,étagère
 printer,imprimante
 lamp,lampe
-computer,ordinateur
+computer,ordinateur; ordi
 telephone,téléphone
 bedroom,chambre
 closet,armoire
