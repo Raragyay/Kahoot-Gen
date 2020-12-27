@@ -31,14 +31,15 @@ class KahootConnection:
     async def login(self, user: str, passwd: str):
         payload = {
             'grant_type': 'password',
-            'password': passwd,
-            'username': user
+            'password'  : passwd,
+            'username'  : user
         }
         response = await self.session.post("https://create.kahoot.it/rest/authenticate", json=payload)
         response_json = await response.json()
         await self.session.close()
         self.session = aiohttp.ClientSession(
-            headers={'authorization': f'Bearer {response_json["access_token"]}'},
+            headers={
+                'authorization': f'Bearer {response_json["access_token"]}'},
             raise_for_status=True
         )
         self.user = response
