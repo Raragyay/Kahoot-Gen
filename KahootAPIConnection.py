@@ -1,29 +1,30 @@
 import copy
+from typing import Dict
 
 from credentials import username, password
 import aiohttp
 from constants import DEFAULT_KAHOOT
 
 
-class KahootConnection:
+class KahootAPIConnection:
     __instance = None
-    initialized = False
+    __initialized = False
 
     @staticmethod
     def get_instance():
-        return KahootConnection.__instance
+        return KahootAPIConnection.__instance
 
     @classmethod
     async def initialize(cls):
-        cls.initialized = True
-        instance = KahootConnection()
+        cls.__initialized = True
+        instance = KahootAPIConnection()
         cls.__instance = instance
         await instance.login(username, password)
 
     def __init__(self):
-        if not KahootConnection.initialized:
-            raise Exception("Please call KahootConnection.initialize() first")
-        elif KahootConnection.__instance:
+        if not KahootAPIConnection.__initialized:
+            raise Exception("Please call KahootAPIConnection.initialize() first")
+        elif KahootAPIConnection.__instance:
             raise Exception("Please call get_instance() instead of __init__")
         self.session = aiohttp.ClientSession()
         self.user = None
@@ -89,7 +90,7 @@ class KahootConnection:
         return response
 
     @staticmethod
-    def clean_metadata(kahoot, need_to_create_draft):
+    def clean_metadata(kahoot: Dict, need_to_create_draft: bool):
         kahoot.pop('targetFolderId', None)
         kahoot.pop('type', None)
         kahoot.pop('created', None)
