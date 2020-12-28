@@ -10,6 +10,11 @@ class KahootAPIConnection:
     __instance = None
     __initialized = False
 
+    def __new__(cls, *args, **kwargs):
+        if not cls.__initialized:
+            raise Exception("Please call KahootAPIConnection.initialize() first")
+        return cls.__instance
+
     @staticmethod
     def get_instance():
         return KahootAPIConnection.__instance
@@ -17,17 +22,20 @@ class KahootAPIConnection:
     @classmethod
     async def initialize(cls):
         cls.__initialized = True
-        instance = KahootAPIConnection()
-        cls.__instance = instance
+        instance = object.__new__(cls)
+        instance.session = aiohttp.ClientSession()
+        instance.user = None
         await instance.login(username, password)
+        cls.__instance = instance
+
+    @classmethod
+    async def close(cls):
+        cls.__initialized = False
+        await cls.__instance.session.close()
 
     def __init__(self):
-        if not KahootAPIConnection.__initialized:
-            raise Exception("Please call KahootAPIConnection.initialize() first")
-        elif KahootAPIConnection.__instance:
-            raise Exception("Please call get_instance() instead of __init__")
-        self.session = aiohttp.ClientSession()
-        self.user = None
+        # print(id(self))
+        pass
 
     async def login(self, user: str, passwd: str):
         payload = {
