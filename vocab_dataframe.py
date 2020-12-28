@@ -1,21 +1,20 @@
-from functools import reduce
-
-import pandas as pd
-import numpy as np
 import os
 
+import numpy as np
+import pandas as pd
 
-class KahootDataframeLoader:
+
+class VocabDataframe:
     def __init__(self):
         self.df: pd.DataFrame = self.create_raw_df()
         self.drop_missing_antonyms()
-        # self.reset_index()
+        self.reset_index()
         self.convert_vocab_to_sets()
         self.fix_dtypes()
-        self.set_index_to_english()
+        # self.set_index_to_english()
         # We will avoid merging duplicate keys because some terms might fit in multiple categories. However,
         # it is important to ensure that the synonyms/antonyms are standard across different datasets.
-        # self.merge_duplicate_keys(self.df)
+        # self.merge_duplicate_keys()
 
     @staticmethod
     def get_csv_dfs():
@@ -28,7 +27,7 @@ class KahootDataframeLoader:
 
     @staticmethod
     def create_raw_df():
-        return pd.concat(KahootDataframeLoader.get_csv_dfs())
+        return pd.concat(VocabDataframe.get_csv_dfs())
 
     def drop_missing_antonyms(self):
         self.df['Antonym'].replace(np.nan, "", inplace=True)
@@ -61,4 +60,3 @@ class KahootDataframeLoader:
 
     def set_index_to_english(self):
         self.df.set_index('English', inplace=True)
-
