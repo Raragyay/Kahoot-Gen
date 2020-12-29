@@ -7,15 +7,21 @@ from typing import Callable, Dict, List, Set, Tuple
 import pandas as pd
 
 from constants import DEFAULT_QUESTION
-from question_generators.en_fr import en_fr
-from question_generators.fr_en import fr_en
+from question_generators.english_to_french_generator import EnglishToFrenchGenerator
+from question_generators.french_antonym_generator import FrenchAntonymGenerator
+from question_generators.french_synonym_generator import FrenchSynonymGenerator
+from question_generators.french_to_english_generator import FrenchToEnglishGenerator
+from question_generators.question import Question
+from question_generators.question_generator_base import QuestionGeneratorBase
 from vocab_dataframe import VocabDataframe
 
 
 class KahootQuestionGenerator:
-    question_generators: Dict[str, Callable] = {
-        'en-fr': en_fr,
-        'fr-en': fr_en
+    question_generators: Dict[str, QuestionGeneratorBase] = {
+        'en-fr' : EnglishToFrenchGenerator(),
+        'fr-en' : FrenchToEnglishGenerator(),
+        'fr_syn': FrenchSynonymGenerator(),
+        'fr_ant': FrenchAntonymGenerator()
     }
 
     def __init__(self, dataframe: pd.DataFrame):
@@ -32,27 +38,24 @@ class KahootQuestionGenerator:
                 unique_questions: bool -> is the term used unique for each question?
                 duration: int > 0 -> how much time is given for the question, in milliseconds
                 points: bool -> is the question worth points?
-                pointsMultiplier: int -> point multiplier (base 1000)
+                pointsMultiplier: one of 1,2 -> point multiplier (base 1000)
         """
         if not categories:
             raise ValueError("Please specify at least one category from which to pick vocabulary.")
         filtered_df = self.df[self.df['Category'].isin(categories)]
-        question_func = self.question_generators[question_type]
-        question_func_required_data = question_func.required_data
-        created_data = [await func(filtered_df) for func in question_func_required_data]
-        return [await KahootQuestionGenerator.create_question(*(await question_func(row, *created_data, **kwargs)),
-                                                              **kwargs)
-                for row in
-                filtered_df.sample(num_of_questions, replace=kwargs.get('unique_questions', False)).iterrows()]
+        question_generator_obj = self.question_generators[question_type]
+        question_generator = await question_generator_obj.generate_n_questions(filtered_df, num_of_questions, **kwargs)
+        return [await KahootQuestionGenerator.create_question(question, **kwargs)
+                async for question in question_generator]
 
     @staticmethod
-    async def create_question(question, correct_answer, wrong_answers, **kwargs):
+    async def create_question(question: Question, **kwargs):
         question_template = copy.deepcopy(DEFAULT_QUESTION)
-        question_template['question'] = question
+        question_template['question'] = question.prompt
         answer_array = [{
             'answer' : answer,
-            'correct': answer == correct_answer}
-            for answer in [correct_answer] + wrong_answers]
+            'correct': answer == question.correct_answer}
+            for answer in [question.correct_answer] + question.incorrect_answers]
         random.shuffle(answer_array)
         question_template['choices'] = answer_array
         for option in ['time', 'points', 'pointsMultiplier']:
@@ -64,7 +67,7 @@ class KahootQuestionGenerator:
 async def main():
     vd = VocabDataframe()
     kqg = KahootQuestionGenerator(vd.df)
-    print(await kqg.generate_questions('fr-en', ["food"], 3))
+    print(await kqg.generate_questions('fr_ant', ["personalities"], 3))
 
 
 if __name__ == '__main__':
