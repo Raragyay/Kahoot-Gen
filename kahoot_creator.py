@@ -1,6 +1,6 @@
-from kahoot_dataframe_loader import KahootDataframeLoader
+from vocab_dataframe import VocabDataframe
 
 
 class KahootCreator:
     def __init__(self):
-        self.db=KahootDataframeLoader()
+        self.db = VocabDataframe()
