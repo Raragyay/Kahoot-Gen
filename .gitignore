@@ -4,3 +4,4 @@ venv/
 .~lock*
 .idea/
 credentials.py
+xlsx_export/

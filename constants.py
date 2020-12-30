@@ -1,4 +1,6 @@
 ## CONSTANTS
+from pathlib import Path
+
 DEFAULT_QUESTION = {
     'type'            : 'quiz',
     'question'        : '',
@@ -76,3 +78,5 @@ DEFAULT_KAHOOT = {
         "visibility"      : 0
     }
 }
+
+base_folder_path = Path(__file__).parent

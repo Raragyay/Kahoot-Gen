@@ -32,6 +32,8 @@ class KahootQuestionGenerator:
                                  num_of_questions: int,
                                  **kwargs):
         """
+            question_type: one of "vocab", "section"
+            num_of_questions: int > 0: how many questions are you making?
             options for kwargs:
                 unique_answers: one of 2,3,4 -> how many answers are there for the question?
                 unique_questions: bool -> is the term used unique for each question?
@@ -66,7 +68,10 @@ class KahootQuestionGenerator:
 async def main():
     vd = VocabDataframe()
     kqg = KahootQuestionGenerator(vd.df)
-    print(await kqg.generate_questions('fr_ant', ["personalities"], 3))
+    print(await kqg.generate_questions(**{
+        'question_type'   : 'fr_ant',
+        'categories'      : ["personalities"],
+        'num_of_questions': 3}))
 
 
 if __name__ == '__main__':
