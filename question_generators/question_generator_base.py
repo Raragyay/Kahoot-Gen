@@ -4,6 +4,7 @@ from typing import Any, AsyncIterator, Callable, Coroutine, List
 import pandas as pd
 
 from question_generators.question import Question
+from question_generators.utilities import df_iterator
 
 
 class QuestionGeneratorBase:
@@ -12,12 +13,12 @@ class QuestionGeneratorBase:
 
     def __init__(self):
         self.required_data_funcs: List[Callable[[pd.DataFrame], Any]] = []
-        self.filter_funcs: List[Coroutine] = []
+        self.filter_funcs: List = []
 
     async def filter_df(self, df: pd.DataFrame) -> pd.DataFrame:
         # We avoid using apply syntax because apply expects a function, while we are using async coroutines
-        return df.loc[[all(await asyncio.gather(*map(lambda func: func(row[1]), self.filter_funcs))) for row in
-                       df.iterrows()]]
+        return df.loc[[all(await asyncio.gather(*(func(row) for func in self.filter_funcs)))
+                       for row in await df_iterator(df)]]
 
     async def obtain_required_data(self, df: pd.DataFrame) -> List[Any]:
         return [await func(df) for func in self.required_data_funcs]
