@@ -1,6 +1,6 @@
 import asyncio
-from functools import reduce
-from typing import Any, AsyncIterator, Callable, Coroutine, Iterator, List, Set, Tuple
+from typing import Any, AsyncIterator, Callable, Coroutine, List
+
 import pandas as pd
 
 from question_generators.question import Question

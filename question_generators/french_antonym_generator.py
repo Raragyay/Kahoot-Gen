@@ -3,7 +3,7 @@ from functools import reduce
 
 import pandas as pd
 
-from question_generators.question import Question
+from question_generators.question import Question, SingleAnswerQuestion
 from question_generators.question_generator_base import QuestionGeneratorBase
 from question_generators.utilities import all_french_vocab_set, df_iterator, has_antonym
 
@@ -11,8 +11,8 @@ from question_generators.utilities import all_french_vocab_set, df_iterator, has
 class FrenchAntonymGenerator(QuestionGeneratorBase):
     def __init__(self):
         super().__init__()
-        self.required_data_funcs = [df_iterator, all_french_vocab_set]
-        self.filter_funcs = [has_antonym]
+        self.required_data_funcs.extend([df_iterator, all_french_vocab_set])
+        self.filter_funcs.extend([has_antonym])
 
     @staticmethod
     async def generate_a_question(row: pd.Series, *data, **kwargs) -> Question:
@@ -29,4 +29,4 @@ class FrenchAntonymGenerator(QuestionGeneratorBase):
             all_vocab_set - invalid_answers,
             kwargs.get('unique_answers', FrenchAntonymGenerator.default_answer_count) - 1
         )
-        return Question(chosen_french_word, chosen_antonym, incorrect_answers)
+        return SingleAnswerQuestion(chosen_french_word, incorrect_answers, chosen_antonym)
