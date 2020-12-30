@@ -54,7 +54,7 @@ class KahootQuestionGenerator:
         answer_array = [{
             'answer' : answer,
             'correct': answer in question.correct_answers}
-            for answer in question.correct_answers + question.incorrect_answers]
+            for answer in question.all_answers()]
         random.shuffle(answer_array)
         question_template['choices'] = answer_array
         for option in ['time', 'points', 'pointsMultiplier']:

@@ -9,6 +9,13 @@ class Question:
     correct_answers: List[str] = field(default_factory=list, init=False)
     incorrect_answers: List[str]
 
+    def all_answers(self) -> List[str]:
+        """
+        Concatenates correct answers and incorrect answers. Note that this does not shuffle the order of the result
+        :return:
+        """
+        return self.correct_answers + self.incorrect_answers
+
 
 @dataclass
 class SingleAnswerQuestion(Question):
