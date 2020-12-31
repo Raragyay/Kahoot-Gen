@@ -6,6 +6,7 @@ from typing import Dict, List
 import pandas as pd
 
 from constants import DEFAULT_QUESTION
+from question_generators import SectionPromptGenerator
 from question_generators.english_to_french_generator import EnglishToFrenchGenerator
 from question_generators.french_antonym_generator import FrenchAntonymGenerator
 from question_generators.french_synonym_generator import FrenchSynonymGenerator
@@ -17,10 +18,11 @@ from vocab_dataframe import VocabDataframe
 
 class KahootQuestionGenerator:
     question_generators: Dict[str, QuestionGeneratorBase] = {
-        'en-fr' : EnglishToFrenchGenerator(),
-        'fr-en' : FrenchToEnglishGenerator(),
-        'fr_syn': FrenchSynonymGenerator(),
-        'fr_ant': FrenchAntonymGenerator()
+        'en-fr'         : EnglishToFrenchGenerator(),
+        'fr-en'         : FrenchToEnglishGenerator(),
+        'fr_syn'        : FrenchSynonymGenerator(),
+        'fr_ant'        : FrenchAntonymGenerator(),
+        'section_prompt': SectionPromptGenerator()
     }
 
     def __init__(self, dataframe: pd.DataFrame):
