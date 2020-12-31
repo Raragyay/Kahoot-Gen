@@ -9,10 +9,9 @@ from vocab_dataframe import VocabDataframe
 
 
 class KahootCreator:
-    def __init__(self, api_connection, kahoot=DEFAULT_KAHOOT):
+    def __init__(self, kahoot=DEFAULT_KAHOOT):
         self.db = VocabDataframe()
         self.question_generator = KahootQuestionGenerator(self.db.df)
-        self.api_connection = api_connection
         self.kahoot = copy.deepcopy(kahoot)
 
     def generate_questions(self, question_section_list: List[Dict]):
