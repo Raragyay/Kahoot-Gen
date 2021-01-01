@@ -1,8 +1,8 @@
 import random
 
-from question_generators.utilities import all_french_vocab_set
-from question_generators.question import Question, SingleAnswerQuestion
+from question_generators.question import SingleAnswerQuestion
 from question_generators.question_generator_base import QuestionGeneratorBase
+from question_generators.utilities import all_french_vocab_set
 
 
 class EnglishToFrenchGenerator(QuestionGeneratorBase):
@@ -11,7 +11,7 @@ class EnglishToFrenchGenerator(QuestionGeneratorBase):
         self.required_data_funcs.extend([all_french_vocab_set])
 
     @staticmethod
-    async def generate_a_question(row, *data, **kwargs):
+    def generate_a_question(row, *data, **kwargs):
         all_vocab_set = data[0]
         english_term = row['English']
         chosen_french_answer = random.sample(row['French'], 1)[0]

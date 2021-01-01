@@ -1,99 +1,67 @@
 import copy
 from typing import Dict
 
-from credentials import username, password
-import aiohttp
+import requests
+
 from constants import DEFAULT_KAHOOT
+from credentials import password, username
 
 
 class KahootAPIConnection:
-    __instance = None
-    __initialized = False
-
-    def __new__(cls, *args, **kwargs):
-        if not cls.__initialized:
-            raise Exception("Please call KahootAPIConnection.initialize() first")
-        return cls.__instance
-
-    @staticmethod
-    def get_instance():
-        return KahootAPIConnection.__instance
-
-    @classmethod
-    async def initialize(cls):
-        cls.__initialized = True
-        instance = object.__new__(cls)
-        instance.session = aiohttp.ClientSession()
-        instance.user = None
-        await instance.login(username, password)
-        cls.__instance = instance
-
-    @classmethod
-    async def close(cls):
-        cls.__initialized = False
-        await cls.__instance.session.close()
-
     def __init__(self):
-        # print(id(self))
-        pass
+        self.session: requests.Session = requests.session()
+        self.login(username, password)
 
-    async def login(self, user: str, passwd: str):
+    def login(self, user: str, passwd: str):
         payload = {
             'grant_type': 'password',
             'password'  : passwd,
             'username'  : user
         }
-        response = await self.session.post("https://create.kahoot.it/rest/authenticate", json=payload)
-        response_json = await response.json()
-        await self.session.close()
-        self.session = aiohttp.ClientSession(
-            headers={
-                'authorization': f'Bearer {response_json["access_token"]}'},
-            raise_for_status=True
-        )
+        response = self.session.post("https://create.kahoot.it/rest/authenticate", json=payload)
+        response_json = response.json()
+        self.session.headers.update({
+            'authorization': f'Bearer {response_json["access_token"]}'})
         self.user = response
 
-    async def load(self, kahoot_id: str):
-        try:
-            response = await self.session.get(f'https://create.kahoot.it/rest/drafts/{kahoot_id}')
-            response_json = await response.json()
+    def load(self, kahoot_id: str):
+        response = self.session.get(f'https://create.kahoot.it/rest/drafts/{kahoot_id}')
+        if response.ok:
+            response_json = response.json()
             return self.clean_metadata(response_json, False)
-        except aiohttp.ClientResponseError:  # Not found in drafts
-            pass
-        try:
-            response = await self.session.get(f'https://create.kahoot.it/rest/kahoots/{kahoot_id}')
-            new_kahoot = copy.deepcopy(DEFAULT_KAHOOT)
-            new_kahoot['kahoot'] = await response.json()
-            new_kahoot['id'] = new_kahoot['kahoot']['uuid']
-            new_kahoot['need_to_create_draft'] = True
-            new_kahoot['kahootExists'] = True
-            return new_kahoot
-        except aiohttp.ClientResponseError:
-            raise ValueError(f"Kahoot with uuid {kahoot_id} does not exist or is private.")
 
-    async def create_new(self, title=None):
+        response = self.session.get(f'https://create.kahoot.it/rest/kahoots/{kahoot_id}')
+        if not response.ok:
+            raise ValueError(f"Kahoot with uuid {kahoot_id} does not exist or is private.")
+        new_kahoot = copy.deepcopy(DEFAULT_KAHOOT)
+        new_kahoot['kahoot'] = response.json()
+        new_kahoot['id'] = new_kahoot['kahoot']['uuid']
+        new_kahoot['need_to_create_draft'] = True
+        new_kahoot['kahootExists'] = True
+        return new_kahoot
+
+    def create_new(self, title=None):
         new_kahoot = copy.deepcopy(DEFAULT_KAHOOT)
         new_kahoot['title'] = title if title else new_kahoot['title']
-        return await self.create_draft(new_kahoot)
+        return self.create_draft(new_kahoot)
 
-    async def create_draft(self, kahoot):
-        response = await self.session.post(f"https://create.kahoot.it/rest/drafts", json=kahoot)
-        return self.clean_metadata(await response.json(), False)
+    def create_draft(self, kahoot):
+        response = self.session.post(f"https://create.kahoot.it/rest/drafts", json=kahoot)
+        return self.clean_metadata(response.json(), False)
 
-    async def update(self, kahoot):
+    def update(self, kahoot):
         if kahoot['need_to_create_draft']:
-            kahoot = await self.create_draft(kahoot)
-        response = await self.session.put(f'https://create.kahoot.it/rest/drafts/{kahoot["kahoot"]["uuid"]}',
-                                          json=kahoot)
-        return self.clean_metadata(await response.json(), False)
+            kahoot = self.create_draft(kahoot)
+        response = self.session.put(f'https://create.kahoot.it/rest/drafts/{kahoot["kahoot"]["uuid"]}', json=kahoot)
+        return self.clean_metadata(response.json(), False)
 
-    async def publish(self, kahoot):
+    def publish(self, kahoot):
         if kahoot['need_to_create_draft']:
-            kahoot = await self.update(kahoot)
-        response = await self.session.post(f'https://create.kahoot.it/rest/drafts/{kahoot["kahoot"]["uuid"]}/publish',
-                                           json=kahoot)
-        _ = await self.session.delete(f'https://create.kahoot.it/rest/kahoots/{kahoot["kahoot"]["uuid"]}/lock')
-        response_json = await response.json()
+            kahoot = self.update(kahoot)
+        response = self.session.post(f'https://create.kahoot.it/rest/drafts/{kahoot["kahoot"]["uuid"]}/publish',
+                                     json=kahoot)
+        self.session.delete(f'https://create.kahoot.it/rest/kahoots/{kahoot["kahoot"]["uuid"]}/lock')
+        response_json = response.json()
         response_json['need_to_create_draft'] = True
         return response
 
@@ -104,3 +72,4 @@ class KahootAPIConnection:
         kahoot.pop('created', None)
         kahoot.pop('modified', None)
         kahoot['need_to_create_draft'] = need_to_create_draft
+        return kahoot

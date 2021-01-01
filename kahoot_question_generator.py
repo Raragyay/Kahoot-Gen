@@ -1,4 +1,3 @@
-import asyncio
 import copy
 import random
 from typing import Dict, List
@@ -28,11 +27,11 @@ class KahootQuestionGenerator:
     def __init__(self, dataframe: pd.DataFrame):
         self.df = dataframe
 
-    async def generate_questions(self,
-                                 question_type: str,
-                                 categories: List[str],
-                                 num_of_questions: int,
-                                 **kwargs):
+    def generate_questions(self,
+                           question_type: str,
+                           categories: List[str],
+                           num_of_questions: int,
+                           **kwargs):
         """
             question_type: one of "vocab", "section"
             num_of_questions: int > 0: how many questions are you making?
@@ -47,12 +46,12 @@ class KahootQuestionGenerator:
             raise ValueError("Please specify at least one category from which to pick vocabulary.")
         filtered_df = self.df[self.df['Category'].isin(categories)]
         question_generator_obj = self.question_generators[question_type]
-        question_generator = await question_generator_obj.generate_n_questions(filtered_df, num_of_questions, **kwargs)
-        return [await KahootQuestionGenerator.create_question(question, **kwargs)
-                async for question in question_generator]
+        question_generator = question_generator_obj.generate_n_questions(filtered_df, num_of_questions, **kwargs)
+        return [KahootQuestionGenerator.create_question(question, **kwargs)
+                for question in question_generator]
 
     @staticmethod
-    async def create_question(question: Question, **kwargs):
+    def create_question(question: Question, **kwargs):
         question_template = copy.deepcopy(DEFAULT_QUESTION)
         question_template['question'] = question.prompt
         answer_array = [{
@@ -67,14 +66,14 @@ class KahootQuestionGenerator:
         return question_template
 
 
-async def main():
+def main():
     vd = VocabDataframe()
     kqg = KahootQuestionGenerator(vd.df)
-    print(await kqg.generate_questions(**{
+    print(kqg.generate_questions(**{
         'question_type'   : 'fr_ant',
         'categories'      : ["personalities"],
         'num_of_questions': 3}))
 
 
 if __name__ == '__main__':
-    asyncio.run(main())
+    main()

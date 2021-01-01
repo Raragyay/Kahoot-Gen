@@ -1,8 +1,8 @@
 import random
 
-from question_generators.utilities import english_set
-from question_generators.question import Question, SingleAnswerQuestion
+from question_generators.question import SingleAnswerQuestion
 from question_generators.question_generator_base import QuestionGeneratorBase
+from question_generators.utilities import english_set
 
 
 class FrenchToEnglishGenerator(QuestionGeneratorBase):
@@ -11,7 +11,7 @@ class FrenchToEnglishGenerator(QuestionGeneratorBase):
         self.required_data_funcs.extend([english_set])
 
     @staticmethod
-    async def generate_a_question(row, *data, **kwargs):
+    def generate_a_question(row, *data, **kwargs):
         english_set = data[0]
         french_term = random.sample(row['French'], 1)[0]
         correct_english_answer = row['English']

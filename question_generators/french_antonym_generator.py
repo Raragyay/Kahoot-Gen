@@ -15,7 +15,7 @@ class FrenchAntonymGenerator(QuestionGeneratorBase):
         self.filter_funcs.extend([has_antonym])
 
     @staticmethod
-    async def generate_a_question(row: pd.Series, *data, **kwargs) -> Question:
+    def generate_a_question(row: pd.Series, *data, **kwargs) -> Question:
         df_iterator = data[0]
         all_vocab_set = data[1]
         chosen_french_word = random.sample(row['French'], 1)[0]

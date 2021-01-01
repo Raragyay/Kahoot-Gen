@@ -1,4 +1,4 @@
-# French Teaching
+# Kahoot-Gen
 
 A Jupyter Notebook that generates [Kahoot](https://kahoot.com) questions for French vocabulary and conjugation.
 
