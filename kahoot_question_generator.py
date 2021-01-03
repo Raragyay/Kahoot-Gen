@@ -12,7 +12,6 @@ from question_generators.french_synonym_generator import FrenchSynonymGenerator
 from question_generators.french_to_english_generator import FrenchToEnglishGenerator
 from question_generators.question import Question
 from question_generators.question_generator_base import QuestionGeneratorBase
-from vocab_dataframe import VocabDataframe
 
 
 class KahootQuestionGenerator:
@@ -64,16 +63,3 @@ class KahootQuestionGenerator:
             if option in kwargs:
                 question_template[option] = kwargs[option]
         return question_template
-
-
-def main():
-    vd = VocabDataframe()
-    kqg = KahootQuestionGenerator(vd.df)
-    print(kqg.generate_questions(**{
-        'question_type'   : 'fr_ant',
-        'categories'      : ["personalities"],
-        'num_of_questions': 3}))
-
-
-if __name__ == '__main__':
-    main()

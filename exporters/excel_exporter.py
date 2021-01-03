@@ -5,9 +5,7 @@ from uuid import uuid4
 import pandas as pd
 
 import constants
-from constants import DEFAULT_KAHOOT
 from exporters.base_exporter import BaseExporter
-from kahoot_creator import KahootCreator
 
 
 class ExcelExporter(BaseExporter):
@@ -24,7 +22,6 @@ class ExcelExporter(BaseExporter):
         folder_id = uuid4()
         export_path = base_path.joinpath("xlsx_export", str(folder_id), "kahoot_export.xlsx")
         question_list = kahoot['kahoot']['questions']
-        print(question_list)
         output_df = pd.DataFrame(
             columns=['Questions', 'Answer 1', 'Answer 2', 'Answer 3', 'Answer 4', 'Time', 'Correct Answer'])
 
@@ -39,16 +36,3 @@ class ExcelExporter(BaseExporter):
         os.mkdir(export_path.parent)
         output_df.to_excel(export_path, encoding='utf-8-sig')
         return export_path
-
-
-def main():
-    kahoot = KahootCreator(DEFAULT_KAHOOT)
-    kahoot.generate_questions([{
-        'question_type'   : 'fr_ant',
-        'categories'      : ["personalities"],
-        'num_of_questions': 3}])
-    ExcelExporter().export(kahoot.kahoot)
-
-
-if __name__ == '__main__':
-    main()
