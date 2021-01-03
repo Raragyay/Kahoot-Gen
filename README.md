@@ -1,12 +1,12 @@
 # Kahoot-Gen
 
-A Jupyter Notebook that generates [Kahoot](https://kahoot.com) questions for French vocabulary and conjugation.
+A (WIP) website that generates [Kahoot](https://kahoot.com) questions for French vocabulary and conjugation.
 
 Most vocabulary was sourced from [Lawless French](https://lawlessfrench.com). 
 In addition, [Dictionnaire-Synonyme](https://dictionnaire-synonyme.com) and
 [Google Translate](https://translate.google.com) were used as sources for synonyms and antonyms for certain words. 
 
-To use, edit the question_entries variable with the type of question and the category you wish to test.
+Although the web server isn't finished, you can still use the jupyter notebook located in [the api folder](https://github.com/Raragyay/Kahoot-Gen/blob/master/services/api/French.ipynb). To use, edit the question_entries variable with the type of question and the category you wish to test.
 
 I have also scraped and pickled the top 10000 and top 2000 most popular French words from 
 [Wikitionary](https://en.wiktionary.org/wiki/Wiktionary:French_frequency_lists/1-2000). To extract them, you can use 
