@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  api:
+    container_name: kahoot_api
+    hostname: kahoot_api
+    build: ./services/api
+    command: gunicorn --bind=0.0.0.0:5000 app:app
+    expose:
+      - "5000"
+
+  nginx:
+    build: ./services/nginx
+    ports:
+      - "1337:80"
+    depends_on:
+      - api

@@ -5,7 +5,7 @@ from uuid import uuid4
 import pandas as pd
 
 import constants
-from exporters.base_exporter import BaseExporter
+from exporters import BaseExporter
 
 
 class ExcelExporter(BaseExporter):

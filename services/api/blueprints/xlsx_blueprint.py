@@ -1,13 +1,13 @@
 from flask import Blueprint, current_app, request, send_from_directory
 
 from constants import DEFAULT_KAHOOT
-from exporters.excel_exporter import ExcelExporter
+from exporters import ExcelExporter
 from kahoot_creator import KahootCreator
 
 xlsx_blueprint = Blueprint('xlsx_blueprint', __name__)
 
 
-@xlsx_blueprint.route('/', methods=['POST'])
+@xlsx_blueprint.route('', methods=['POST'])
 def xlsx_export():
     """
     Takes parameters to generate a kahoot and sends back an excel file
