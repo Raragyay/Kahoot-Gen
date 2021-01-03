@@ -10,7 +10,7 @@ services:
       - "5000"
 
   nginx:
-    build: ./services/nginx
+    build: ./services/client
     ports:
       - "1337:80"
     depends_on:
