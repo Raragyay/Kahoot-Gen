@@ -21,6 +21,8 @@ I also have a list of unique vocabulary in `Master Pronunciation.csv` that you m
 hand-picked, with the latter ones mostly coming from `top10kwords.pkl`.
 
 ### Todo List
-- [x] Add configuration file for question types
-- [ ] Extract Notebook into separate script, package as exe
+- [x] Add parameterized creation of questions
+- [x] Convert API into a Docker Container
+- [ ] Build front-end
+- [ ] Deploy
 - [ ] Support other kahoot-like websites. 
