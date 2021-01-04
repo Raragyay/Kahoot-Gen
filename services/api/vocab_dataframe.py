@@ -3,6 +3,8 @@ import os
 import numpy as np
 import pandas as pd
 
+from constants import base_folder_path
+
 
 class VocabDataframe:
     def __init__(self):
@@ -18,7 +20,7 @@ class VocabDataframe:
 
     @staticmethod
     def get_csv_dfs():
-        file_dir = os.path.dirname(os.path.realpath(__file__))
+        file_dir = base_folder_path
         for file in sorted(os.listdir(os.path.join(file_dir, 'vocab_database'))):
             temp_df = pd.read_csv(os.path.join(file_dir, 'vocab_database', file),
                                   names=['English', 'French', 'Antonym'], dtype=str)
