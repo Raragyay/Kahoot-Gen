@@ -13,10 +13,10 @@ class EnglishToFrenchGenerator(QuestionGeneratorBase):
     @staticmethod
     def generate_a_question(row, *data, **kwargs):
         all_vocab_set = data[0]
-        english_term = row['English']
-        chosen_french_answer = random.sample(row['French'], 1)[0]
+        english_term = row.english
+        chosen_french_answer = random.choice(row.french)
         incorrect_answers = random.sample(
-            all_vocab_set - row['French'],
+            all_vocab_set - set(row.french),
             kwargs.get('unique_answers', EnglishToFrenchGenerator.default_answer_count) - 1
         )
         return SingleAnswerQuestion(english_term, incorrect_answers, chosen_french_answer)

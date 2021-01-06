@@ -13,7 +13,7 @@ class SectionPromptGenerator(QuestionGeneratorBase):
         super().__init__()
 
     @staticmethod
-    def generate_a_question(row: pd.Series, *data, **kwargs) -> Question:
+    def generate_a_question(row=None, *data, **kwargs) -> Question:
         """
         Must include "section_prompt" in kwargs. This will become the prompt that the players see
         Optional argument "section_answers" is a list of up to 4 correct answers
@@ -22,10 +22,10 @@ class SectionPromptGenerator(QuestionGeneratorBase):
         :param kwargs:
         :return:
         """
-        if "section_prompt" not in kwargs:
+        if "sectionPrompt" not in kwargs:
             raise AttributeError("Section Prompt was not found in kwargs")
         if "section_answers" in kwargs:
             section_answers = kwargs['section_answers']
         else:
             section_answers = ['ok'] * 4
-        return MultiAnswerQuestion(kwargs['section_prompt'], [], section_answers)
+        return MultiAnswerQuestion(kwargs['sectionPrompt'], [], section_answers)

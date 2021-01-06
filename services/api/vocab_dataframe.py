@@ -62,3 +62,4 @@ class VocabDataframe:
 
     def set_index_to_english(self):
         self.df.set_index('English', inplace=True)
+

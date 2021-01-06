@@ -1,25 +1,30 @@
 import copy
+import itertools
 from typing import Dict, List
 
 import slugify
 
 from kahoot_question_generator import KahootQuestionGenerator
-from vocab_dataframe import VocabDataframe
 
 
 class KahootCreator:
     def __init__(self, kahoot):
-        self.db = VocabDataframe()
-        self.question_generator = KahootQuestionGenerator(self.db.df)
+        self.question_generator = KahootQuestionGenerator()
         self.kahoot: Dict = copy.deepcopy(kahoot)
 
-    def generate_questions(self, question_section_list: List[Dict]):
+    def generate_questions(self, section_list: List[Dict]):
         """
-        :param question_section_list: A list of different sets of parameters for generating questions
+        :param section_list: A list of different sets of parameters for generating questions
         :return:
         """
-        questions = [question for params in question_section_list
-                     for question in self.question_generator.generate_questions(**params)]
+        questions = [question
+                     for section in section_list
+                     for question in
+                     itertools.chain(self.question_generator.create_section_question(**section),
+                                     itertools.chain.from_iterable(
+                                         self.question_generator.generate_questions(**questionGenerator)
+                                         for questionGenerator in section['questionGenerators']))
+                     ]
         self.kahoot['kahoot']['questions'] = questions
 
     @property

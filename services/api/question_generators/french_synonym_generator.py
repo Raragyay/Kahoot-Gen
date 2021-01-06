@@ -14,10 +14,10 @@ class FrenchSynonymGenerator(QuestionGeneratorBase):
         self.filter_funcs.extend([has_synonyms])
 
     @staticmethod
-    def generate_a_question(row: Series, *data, **kwargs) -> Question:
+    def generate_a_question(row, *data, **kwargs) -> Question:
         list_of_french_sets = data[0]
         all_french_vocab_set = data[1]
-        chosen_french_term, chosen_answer = random.sample(row['French'], 2)
+        chosen_french_term, chosen_answer = random.sample(row.french, 2)
         sets_containing_chosen_french_term = set.union(*filter(lambda s: chosen_french_term in s,
                                                                list_of_french_sets))
         incorrect_answers = random.sample(

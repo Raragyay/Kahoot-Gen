@@ -13,12 +13,13 @@ def xlsx_export():
     Takes parameters to generate a kahoot and sends back an excel file
     :return:
     """
-    params = request.get_json()
-    if 'question_generators' not in params:
-        return 'question_generators not in request', 400
+    json = request.get_json()
+    if 'kahootData' not in json:
+        return 'kahootData not in request', 400
+    params = json['kahootData']
     kahoot = KahootCreator(DEFAULT_KAHOOT)
     try:
-        kahoot.generate_questions(params['question_generators'])
+        kahoot.generate_questions(params)
     except Exception as e:
         current_app.log(e)
         return 'malformed request', 400

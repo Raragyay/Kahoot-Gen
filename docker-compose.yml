@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  api:
+    container_name: kahoot_api
+    hostname: kahoot_api
+    build:
+      context: ./services/api
+      dockerfile: Dockerfile.prod
+    command: gunicorn --bind=0.0.0.0:5000 app:app --log-level debug
+    env_file:
+      - services/api/.prod.env
+    expose:
+      - "5000"
+
+  client_dev:
+    build:
+      context: ./services/client
+      dockerfile: Dockerfile
+    ports:
+      - "1337:80"
+    depends_on:
+      - api

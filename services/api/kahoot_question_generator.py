@@ -4,6 +4,7 @@ from typing import Dict, List
 
 import pandas as pd
 
+from db import VocabularyCategory, VocabularyTerm, db
 from constants import DEFAULT_QUESTION
 from question_generators import SectionPromptGenerator
 from question_generators.english_to_french_generator import EnglishToFrenchGenerator
@@ -16,24 +17,23 @@ from question_generators.question_generator_base import QuestionGeneratorBase
 
 class KahootQuestionGenerator:
     question_generators: Dict[str, QuestionGeneratorBase] = {
-        'en-fr'         : EnglishToFrenchGenerator(),
-        'fr-en'         : FrenchToEnglishGenerator(),
-        'fr_syn'        : FrenchSynonymGenerator(),
-        'fr_ant'        : FrenchAntonymGenerator(),
-        'section_prompt': SectionPromptGenerator()
+        'en-fr' : EnglishToFrenchGenerator(),
+        'fr-en' : FrenchToEnglishGenerator(),
+        'fr_syn': FrenchSynonymGenerator(),
+        'fr_ant': FrenchAntonymGenerator(),
     }
 
-    def __init__(self, dataframe: pd.DataFrame):
-        self.df = dataframe
+    def __init__(self):
+        pass
 
     def generate_questions(self,
-                           question_type: str,
+                           questionType: str,
                            categories: List[str],
-                           num_of_questions: int,
+                           numOfQuestions: int,
                            **kwargs):
         """
-            question_type: one of "vocab", "section"
-            num_of_questions: int > 0: how many questions are you making?
+            questionType: one of the keys of question_generators
+            numOfQuestions: int > 0: how many questions are you making?
             options for kwargs:
                 unique_answers: one of 2,3,4 -> how many answers are there for the question?
                 unique_questions: bool -> is the term used unique for each question?
@@ -41,13 +41,19 @@ class KahootQuestionGenerator:
                 points: bool -> is the question worth points?
                 pointsMultiplier: one of 1,2 -> point multiplier (base 1000)
         """
-        if not categories:
+        if not categories and questionType is not 'section_prompt':
             raise ValueError("Please specify at least one category from which to pick vocabulary.")
-        filtered_df = self.df[self.df['Category'].isin(categories)]
-        question_generator_obj = self.question_generators[question_type]
-        question_generator = question_generator_obj.generate_n_questions(filtered_df, num_of_questions, **kwargs)
+        base_query = db.session.query(VocabularyTerm).join(VocabularyTerm.category)
+        category_filtered_query = base_query.filter(VocabularyCategory.name.in_(categories))
+        question_generator_obj = self.question_generators[questionType]
+        question_generator = question_generator_obj.generate_n_questions(category_filtered_query, numOfQuestions,
+                                                                         **kwargs)
         return [KahootQuestionGenerator.create_question(question, **kwargs)
                 for question in question_generator]
+
+    @staticmethod
+    def create_section_question(**kwargs):
+        return [KahootQuestionGenerator.create_question(SectionPromptGenerator.generate_a_question(**kwargs))]
 
     @staticmethod
     def create_question(question: Question, **kwargs):

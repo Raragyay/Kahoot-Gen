@@ -1,3 +1,4 @@
+import itertools
 import random
 from functools import reduce
 
@@ -15,16 +16,13 @@ class FrenchAntonymGenerator(QuestionGeneratorBase):
         self.filter_funcs.extend([has_antonym])
 
     @staticmethod
-    def generate_a_question(row: pd.Series, *data, **kwargs) -> Question:
+    def generate_a_question(row, *data, **kwargs) -> Question:
         df_iterator = data[0]
         all_vocab_set = data[1]
-        chosen_french_word = random.sample(row['French'], 1)[0]
-        chosen_antonym = random.sample(row['Antonym'], 1)[0]
-        invalid_answers = reduce(
-            set.union,
-            (r['Antonym'] for r in df_iterator if chosen_french_word in r['French']),
-            set()
-        )
+        chosen_french_word = random.choice(row.french)
+        chosen_antonym = random.choice(row.antonym)
+        invalid_answers = set(itertools.chain.from_iterable(
+            r[1] for r in df_iterator if chosen_french_word in r[0]))
         incorrect_answers = random.sample(
             all_vocab_set - invalid_answers,
             kwargs.get('unique_answers', FrenchAntonymGenerator.default_answer_count) - 1
