@@ -26,15 +26,14 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-      - name: Build docker files
-        run: docker-compose -f docker-compose-prod.yml build
-        env:
-          DATABASE_URL: ${{secrets.AWS_DATABASE_URL}} 
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
       
-      - name: Push images to Amazon ECR
+      - name: Build and push images to Amazon ECR
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        run: docker-compose -f docker-compose-prod.yml push
+          DATABASE_URL: ${{ secrets.AWS_DATABASE_URL }}
+        run: |
+          - docker-compose -f docker-compose-prod.yml build
+          - docker-compose -f docker-compose-prod.yml push
