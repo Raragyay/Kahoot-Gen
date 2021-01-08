@@ -2,9 +2,8 @@ from flask import Flask
 
 import config
 from blueprints.default_table import default_table_blueprint
-from blueprints.test import test_blueprint
-from db.db import db
 from blueprints.xlsx_blueprint import xlsx_blueprint
+from db.db import db
 
 
 def create_app():
