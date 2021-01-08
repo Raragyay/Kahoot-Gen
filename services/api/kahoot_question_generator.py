@@ -41,7 +41,7 @@ class KahootQuestionGenerator:
                 points: bool -> is the question worth points?
                 pointsMultiplier: one of 1,2 -> point multiplier (base 1000)
         """
-        if not categories and questionType is not 'section_prompt':
+        if not categories and questionType != 'section_prompt':
             raise ValueError("Please specify at least one category from which to pick vocabulary.")
         base_query = db.session.query(VocabularyTerm).join(VocabularyTerm.category)
         category_filtered_query = base_query.filter(VocabularyCategory.name.in_(categories))
