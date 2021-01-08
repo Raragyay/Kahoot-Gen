@@ -12,6 +12,8 @@ services:
       - services/api/.prod.env
     expose:
       - "5000"
+    volumes:
+      - ./services/api/xlsx_export:/usr/src/api/xlsx_export
 
   client_dev:
     build:
