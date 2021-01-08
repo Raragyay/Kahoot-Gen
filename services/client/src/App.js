@@ -11,7 +11,7 @@ function App() {
 
             </Header>
             <Content
-                style={{padding:'5vh 20vw 0'}}
+                style={{padding: '5vh 20vw 0'}}
             >
                 <KahootSectionTable/>
             </Content>
