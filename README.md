@@ -1,7 +1,7 @@
 # Kahoot-Gen
 
 A website that generates [Kahoot](https://kahoot.com) questions for French vocabulary and conjugation. It's up
-now [here](kahootgen.me)!
+now [here](https://kahootgen.me)!
 
 Most vocabulary was sourced from [Lawless French](https://lawlessfrench.com). In
 addition, [Dictionnaire-Synonyme](https://dictionnaire-synonyme.com) and
@@ -29,7 +29,7 @@ hand-picked, with the latter ones mostly coming from `top10kwords.pkl`.
 - [x] Add parameterized creation of questions
 - [x] Convert API into a Docker Container
 - [x] Build front-end
-- [x] [Deploy](kahootgen.me)
+- [x] [Deploy](https://kahootgen.me)
 - [ ] Provide stats on vocabulary categories
 - [ ] Add conjugation support for website
 - [ ] Support other kahoot-like websites. 
