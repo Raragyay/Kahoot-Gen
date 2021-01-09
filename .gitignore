@@ -5,3 +5,4 @@ services/api/.ipynb_checkpoints
 .idea/
 services/api/credentials.py
 services/api/xlsx_export/
+temp

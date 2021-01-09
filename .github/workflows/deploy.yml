@@ -35,5 +35,5 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           DATABASE_URL: ${{ secrets.AWS_DATABASE_URL }}
         run: |
-          docker-compose -f docker-compose-prod.yml build
-          docker-compose -f docker-compose-prod.yml push
+          docker-compose -f docker-compose-build.yml build
+          docker-compose -f docker-compose-build.yml push
