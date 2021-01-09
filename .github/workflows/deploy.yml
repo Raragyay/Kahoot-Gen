@@ -45,7 +45,9 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.SSH_KEY_PRIVATE }}
           passphrase: ${{ secrets.SSH_KEY_PASSPHRASE }}
+          # We relogin to ensure that our credentials are valid
           script: |
+            $( aws ecr get-login --no-include-email --region us-east-1 )
             cd kahoot-gen
             docker-compose down
             docker-compose pull
