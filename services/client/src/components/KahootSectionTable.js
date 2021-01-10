@@ -160,7 +160,9 @@ function KahootSectionTable() {
                 rowKey={({key}) => key}
                 footer={(currentPageData) => {
                     return (
-                        <Space>
+                        <Space
+                            wrap={true}
+                        >
                             <Button
                                 onClick={onSectionCreate}
                                 type='primary'
@@ -191,52 +193,52 @@ function KahootSectionTable() {
                         </Space>
                     )
                 }}
-            >
-                <Col
+                    >
+                    <Col
                     title='# of Questions'
                     dataIndex='numOfQuestions'
                     key='numOfQuestions'
                     width='10%'
-                />
-                <Col
+                    />
+                    <Col
                     title='Section Prompt'
                     dataIndex='sectionPrompt'
                     key='sectionPrompt'
                     width='90%'
                     render={(text, record) => {
-                        const params = {
-                            defaultValue: text,
-                            key: record.key,
-                            maxLength: 120, //Kahoot given
-                            onChange: e => {
-                                const tableDataCopy = [...tableData]
-                                const editedItemIndex = tableDataCopy.findIndex(({key}) => key === record.key)
-                                Object.assign(tableDataCopy[editedItemIndex], {'sectionPrompt': e.target.value})
-                                setTableData(tableDataCopy)
-                            },
-                            placeholder: 'Enter a prompt for this section!'
-                        }
-                        return <Input {...params}/>
-                    }}
-                />
-                <Col
+                    const params = {
+                    defaultValue: text,
+                    key: record.key,
+                    maxLength: 120, //Kahoot given
+                    onChange: e => {
+                    const tableDataCopy = [...tableData]
+                    const editedItemIndex = tableDataCopy.findIndex(({key}) => key === record.key)
+                    Object.assign(tableDataCopy[editedItemIndex], {'sectionPrompt': e.target.value})
+                    setTableData(tableDataCopy)
+                },
+                    placeholder: 'Enter a prompt for this section!'
+                }
+                    return <Input {...params}/>
+                }}
+                    />
+                    <Col
                     title=''
                     key='deleteAction'
                     render={(_, {key}) =>
-                        <Popconfirm
-                            title='Are you SURE you want to delete this section?'
-                            onConfirm={onSectionDelete(key)}
-                            placement={'rightBottom'}
-                        >
-                            <CloseCircleOutlined
-                                twoToneColor={colors.red}
-                            />
-                        </Popconfirm>
-                    }
-                />
-            </Table>
-        </>
-    )
-}
+                    <Popconfirm
+                    title='Are you SURE you want to delete this section?'
+                    onConfirm={onSectionDelete(key)}
+                    placement={'rightBottom'}
+                    >
+                    <CloseCircleOutlined
+                    twoToneColor={colors.red}
+                    />
+                    </Popconfirm>
+                }
+                    />
+                    </Table>
+                    </>
+                    )
+                }
 
 export default KahootSectionTable
