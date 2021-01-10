@@ -1,8 +1,7 @@
 import React from 'react';
-import {Table, Col, Tag, Select, InputNumber, Button, Form} from 'antd';
-import {CloseCircleTwoTone} from "@ant-design/icons";
+import {Table, Col, Tag, Select, InputNumber, Button} from 'antd';
+import {CloseCircleOutlined} from "@ant-design/icons";
 import {colors} from "../constants";
-import {red} from "@ant-design/colors";
 
 function KahootQuestionTable(questionGenerators,
                              categoryToColor,
@@ -62,32 +61,32 @@ function KahootQuestionTable(questionGenerators,
                      key='categories'
                      width='75%'
                      render={(categories, {key}) => (<>
-                             <Select
-                                 allowClear={true}
-                                 defaultValue={categories}
-                                 mode={'multiple'}
-                                 style={{minWidth: '50%'}}
-                                 tagRender={({value, closable, onClose}) => {
-                                     const color = categoryToColor[value]
-                                     const params = {
-                                         color: color,
-                                         key: value,
-                                         closable: closable,
-                                         onClose: onClose,
-                                     }
-                                     return (<Tag {...params}>{value}</Tag>)
-                                 }}
-                                 options={Object.entries(categoryToColor).map(([key, value]) => ({'value': key}))}
-                                 onChange={onParamChange('categories')(key)}
-                                 placeholder={'Select some categories!'}
-                             >
-                             </Select>
+                         <Select
+                             allowClear={true}
+                             defaultValue={categories}
+                             mode={'multiple'}
+                             style={{minWidth: '50%'}}
+                             tagRender={({value, closable, onClose}) => {
+                                 const color = categoryToColor[value]
+                                 const params = {
+                                     color: color,
+                                     key: value,
+                                     closable: closable,
+                                     onClose: onClose,
+                                 }
+                                 return (<Tag {...params}>{value}</Tag>)
+                             }}
+                             options={Object.entries(categoryToColor).map(([key, value]) => ({'value': key}))}
+                             onChange={onParamChange('categories')(key)}
+                             placeholder={'Select some categories!'}
+                         >
+                         </Select>
                      </>)}/>
                 <Col
                     title=''
                     key='deleteAction'
                     render={(_, {key}) =>
-                        <CloseCircleTwoTone
+                        <CloseCircleOutlined
                             twoToneColor={colors.red}
                             onClick={onQuestionDeleted(key)}
                         />

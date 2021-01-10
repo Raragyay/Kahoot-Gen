@@ -31,7 +31,7 @@ const tempColorArray = [red,
     blue,
     geekblue,
     purple,
-    magenta].map(arr => arr.slice(5, 10))
+    magenta].map(arr => arr.slice(6, 10))
 
-export const colorArray = [0, 1, 2, 3, 4].map(i => tempColorArray.map(arr => arr[i]))
+export const colorArray = [0, 1, 2, 3].map(i => tempColorArray.map(arr => arr[i]))
     .flat()
