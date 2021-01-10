@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {Button, Col, Input, Popconfirm, Space, Table} from 'antd';
 import KahootQuestionTable from "./KahootQuestionTable";
-import {PlusCircleTwoTone, MinusCircleTwoTone, CloseCircleTwoTone, DownloadOutlined} from '@ant-design/icons'
-import '../App.css'
+import {PlusCircleOutlined, MinusCircleOutlined, CloseCircleOutlined, DownloadOutlined} from '@ant-design/icons'
+import '../styles/App.less'
 import {colorArray, colors} from '../constants'
 
 function KahootSectionTable() {
@@ -146,11 +146,11 @@ function KahootSectionTable() {
                         expandIcon: ({expanded, onExpand, record}) => {
                             const params = {
                                 onClick: e => onExpand(record, e),
-                                twoToneColor: colors.red
+                                // twoToneColor: colors.red
                             }
                             return expanded ?
-                                (<MinusCircleTwoTone {...params}/>) :
-                                (<PlusCircleTwoTone {...params}/>)
+                                (<MinusCircleOutlined {...params}/>) :
+                                (<PlusCircleOutlined {...params}/>)
                         }
                     }
                 }
@@ -228,7 +228,7 @@ function KahootSectionTable() {
                             onConfirm={onSectionDelete(key)}
                             placement={'rightBottom'}
                         >
-                            <CloseCircleTwoTone
+                            <CloseCircleOutlined
                                 twoToneColor={colors.red}
                             />
                         </Popconfirm>
