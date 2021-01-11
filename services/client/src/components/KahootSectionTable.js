@@ -4,6 +4,7 @@ import KahootQuestionTable from "./KahootQuestionTable";
 import {PlusCircleOutlined, MinusCircleOutlined, CloseCircleOutlined, DownloadOutlined} from '@ant-design/icons'
 import '../styles/App.less'
 import {colorArray, colors} from '../constants'
+import {maxBy, sumBy} from 'lodash'
 
 function KahootSectionTable() {
     const [loading, setLoading] = useState(true)
@@ -49,7 +50,7 @@ function KahootSectionTable() {
         const tableDataCopy = [...tableData]
         const sectionIndex = tableDataCopy.findIndex(({key}) => key === sectionKey)
         const nextKey = tableData[sectionIndex].questionGenerators.length === 0 ? 0 :
-            Math.max(...tableData[sectionIndex].questionGenerators.map(({key}) => key)) + 1
+            maxBy(tableData[sectionIndex].questionGenerators, ({key}) => key).key + 1
         const questionGeneratorsCopy = [...tableDataCopy[sectionIndex].questionGenerators] // Make copy of question generator array to force child component rerendering
         questionGeneratorsCopy.push({
             key: nextKey,
@@ -74,14 +75,14 @@ function KahootSectionTable() {
     const onQuestionNumChange = sectionKey => () => {
         const tableDataCopy = [...tableData]
         const sectionIndex = tableDataCopy.findIndex(({key}) => key === sectionKey)
-        const numOfQuestions = tableDataCopy[sectionIndex].questionGenerators.map(({numOfQuestions}) => numOfQuestions).reduce((x, y) => x + y, 0)
+        const numOfQuestions = sumBy(tableDataCopy[sectionIndex].questionGenerators, ({numOfQuestions}) => numOfQuestions)
         Object.assign(tableDataCopy[sectionIndex], {numOfQuestions: numOfQuestions})
         setTableData(tableDataCopy)
     }
 
     const onSectionCreate = () => {
         const tableDataCopy = [...tableData]
-        const nextKey = tableDataCopy.length === 0 ? 0 : Math.max(...tableDataCopy.map(({key}) => key)) + 1
+        const nextKey = tableDataCopy.length === 0 ? 0 : maxBy(tableDataCopy, ({key}) => key).key + 1
         tableDataCopy.push({
             key: nextKey,
             sectionPrompt: '',
