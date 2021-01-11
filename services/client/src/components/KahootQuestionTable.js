@@ -1,16 +1,44 @@
 import React from 'react';
 import {Table, Col, Tag, Select, InputNumber, Button, Tooltip, Space, Typography, List} from 'antd';
-import {CloseCircleOutlined} from "@ant-design/icons";
+import {CloseCircleOutlined, WarningOutlined} from "@ant-design/icons";
 import {colors} from "../constants";
+import {sumBy, pick} from 'lodash'
 
-function KahootQuestionTable(questionGenerators,
-                             categoryToData,
-                             questionTypes,
-                             questionTypesReversed,
-                             onParamChange,
-                             onQuestionCreated,
-                             onQuestionDeleted,
-                             onQuestionNumChanged) {
+export default function KahootQuestionTable(questionGenerators,
+                                            categoryToData,
+                                            questionTypes,
+                                            questionTypesReversed,
+                                            onParamChange,
+                                            onQuestionCreated,
+                                            onQuestionDeleted,
+                                            onQuestionNumChanged) {
+    // keep this up to date with new category additions
+    const generateCategoryRemarks = ({questionType, categories, numOfQuestions}) => {
+        if (categories.length === 0) {
+            return 'You haven\'t picked any categories for your vocabulary!'
+        }
+        const pickedData = Object.values(pick(categoryToData, categories))
+        console.log(pickedData)
+        if (questionType === 'en-fr' || questionType === 'fr-en') {
+            const termNum = sumBy(pickedData, ({rowCount}) => rowCount)
+            console.log(termNum)
+            if (termNum < numOfQuestions) {
+                return "There are not enough terms in your selected categories to generate your questions."
+            }
+        } else if (questionType === 'fr_syn') {
+            const synNum = sumBy(pickedData, ({synonymRowCount}) => synonymRowCount)
+            if (synNum < numOfQuestions) {
+                return "There are not enough terms with synonyms in your selected categories to generate your questions."
+            }
+        } else if (questionType === 'fr_ant') {
+            const antNum = sumBy(pickedData, ({antonymRowCount}) => antonymRowCount)
+            if (antNum < numOfQuestions) {
+                return "There are not enough terms with antonyms in your selected categories to generate your questions."
+            }
+        }
+        return false;
+    }
+
     return (
         <>
             <Table
@@ -60,12 +88,12 @@ function KahootQuestionTable(questionGenerators,
                      dataIndex='categories'
                      key='categories'
                      width='75%'
-                     render={(categories, {key}) => (<>
-                         <Select
+                     render={(categories, entry) => {
+                         const selectElement = <Select
                              allowClear={true}
                              defaultValue={categories}
                              mode={'multiple'}
-                             style={{minWidth: '50%'}}
+                             style={{minWidth: '20vw'}}
                              tagRender={({value, closable, onClose}) => {
                                  const data = categoryToData[value]
                                  const tagParams = {
@@ -98,11 +126,28 @@ function KahootQuestionTable(questionGenerators,
                                  )
                              }}
                              options={Object.entries(categoryToData).map(([key, value]) => ({'value': key}))}
-                             onChange={onParamChange('categories')(key)}
+                             onChange={onParamChange('categories')(entry.key)}
                              placeholder={'Select some categories!'}
                          >
                          </Select>
-                     </>)}/>
+                         const categoryRemarks = generateCategoryRemarks(entry)
+
+                         return <>
+                             <Space>
+                                 {selectElement}
+                                 {categoryRemarks && <Tooltip
+                                     placement={'top'}
+                                     title={() =>
+                                         <Typography.Text>
+                                             {categoryRemarks}
+                                         </Typography.Text>
+                                     }
+                                 >
+                                     <WarningOutlined style={{color: colors.red, fontSize: '200%'}}/>
+                                 </Tooltip>}
+                             </Space>
+                         </>
+                     }}/>
                 <Col
                     title=''
                     key='deleteAction'
@@ -116,5 +161,3 @@ function KahootQuestionTable(questionGenerators,
             </Table>
         </>)
 }
-
-export default KahootQuestionTable
