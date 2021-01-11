@@ -1,10 +1,10 @@
 import React from 'react';
-import {Table, Col, Tag, Select, InputNumber, Button} from 'antd';
+import {Table, Col, Tag, Select, InputNumber, Button, Tooltip, Space, Typography, List} from 'antd';
 import {CloseCircleOutlined} from "@ant-design/icons";
 import {colors} from "../constants";
 
 function KahootQuestionTable(questionGenerators,
-                             categoryToColor,
+                             categoryToData,
                              questionTypes,
                              questionTypesReversed,
                              onParamChange,
@@ -67,16 +67,37 @@ function KahootQuestionTable(questionGenerators,
                              mode={'multiple'}
                              style={{minWidth: '50%'}}
                              tagRender={({value, closable, onClose}) => {
-                                 const color = categoryToColor[value]
-                                 const params = {
-                                     color: color,
+                                 const data = categoryToData[value]
+                                 const tagParams = {
+                                     color: data.color,
                                      key: value,
                                      closable: closable,
                                      onClose: onClose,
                                  }
-                                 return (<Tag {...params}>{value}</Tag>)
+                                 const tooltipParams = {
+                                     placement: 'top',
+                                     title: () => <List
+                                         dataSource={[
+                                             ['Number of Terms', data.rowCount],
+                                             ['Number of Terms with Synonyms', data.synonymRowCount],
+                                             ['Number of Terms with Antonyms', data.antonymRowCount],
+                                         ]}
+                                         renderItem={(entry) =>
+                                             <Space split={' '}>
+                                                 <Typography.Text>{entry[0]}:</Typography.Text>
+                                                 <Typography.Text>{entry[1]}</Typography.Text>
+                                             </Space>
+                                         }
+                                     >
+                                     </List>
+                                 }
+                                 return (
+                                     <Tooltip {...tooltipParams}>
+                                         <Tag {...tagParams}>{value}</Tag>
+                                     </Tooltip>
+                                 )
                              }}
-                             options={Object.entries(categoryToColor).map(([key, value]) => ({'value': key}))}
+                             options={Object.entries(categoryToData).map(([key, value]) => ({'value': key}))}
                              onChange={onParamChange('categories')(key)}
                              placeholder={'Select some categories!'}
                          >

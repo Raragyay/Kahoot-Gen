@@ -23,7 +23,7 @@ function App() {
             <Footer style={{textAlign: 'center'}}>
                 <Space split={<Divider type={'vertical'}/>}>
                     <Typography.Text>Created with React and Ant Design</Typography.Text>
-                    <Typography.Link href={'https://github.com/Raragyay/Kahoot-Gen'}><GithubOutlined/></Typography.Link>
+                    <Typography.Link href={'https://github.com/Raragyay/Kahoot-Gen'} target={'_blank'}><GithubOutlined/></Typography.Link>
                 </Space>
             </Footer>
         </Layout>
