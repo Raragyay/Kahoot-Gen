@@ -1,12 +1,22 @@
 from flask import Blueprint
-from db import VocabularyCategory, db
+from sqlalchemy import case, func, text
+
+from db import VocabularyCategory, VocabularyTerm, db
 
 default_table_blueprint = Blueprint('default_table_blueprint', __name__)
 
 
 @default_table_blueprint.route('', methods=['GET'])
 def default_setup():
-    categories = db.session.query(VocabularyCategory.name).all()
+    category_data = db.session.query(VocabularyTerm).join(VocabularyCategory) \
+        .group_by(VocabularyCategory.name) \
+        .with_entities(
+        VocabularyCategory.name.label('categoryName'),
+        func.count(VocabularyTerm.id).label('rowCount'),
+        func.count(case([(func.array_length(VocabularyTerm.french, 1) > 1, 1)])).label('synonymRowCount'),
+        func.count(case([(func.array_length(VocabularyTerm.antonym, 1) > 0, 1)])).label('antonymRowCount')
+    ) \
+        .order_by(text('"rowCount" DESC'))
     return {
         'tableData'    : [
             {
@@ -29,5 +39,5 @@ def default_setup():
             'fr_syn': 'French Synonym',
             'fr_ant': 'French Antonym',
         },
-        'categories'   : categories
+        'categories'   : [result._asdict() for result in category_data]
     }

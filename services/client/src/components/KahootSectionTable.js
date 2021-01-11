@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Button, Col, Input, Popconfirm, Space, Table} from 'antd';
+import {Button, Col, Input, Modal, Popconfirm, Space, Table, Typography} from 'antd';
 import KahootQuestionTable from "./KahootQuestionTable";
 import {PlusCircleOutlined, MinusCircleOutlined, CloseCircleOutlined, DownloadOutlined} from '@ant-design/icons'
 import '../styles/App.less'
@@ -26,7 +26,10 @@ function KahootSectionTable() {
                 })
                 .then(data => {
                     setTableData(data['tableData'])
-                    setCategories(Object.fromEntries(data['categories'].map((category, idx) => [category, colorArray[idx]])))
+                    console.log(data['categories'])
+                    setCategories(Object.fromEntries(
+                        data['categories'].sort(({categoryName}) => categoryName)
+                            .map((result, idx) => [result.categoryName, Object.assign(result, {color: colorArray[idx]})])))
                     setQuestionTypes(data['questionTypes'])
                     setQuestionTypesReversed(Object.fromEntries(Object.entries(data['questionTypes']).map(([k, v]) => [v, k])))
                 }).then(() => {
@@ -106,9 +109,21 @@ function KahootSectionTable() {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({'kahootData': tableData})
-        }).then(response => response.json())
+        }).then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw Error();
+            }
+        })
             .then(json => setExcelLink(json.fileId))
             .then(() => setDownloadLoading(false))
+            .catch(() =>
+                Modal.error({
+                        content: <Typography.Text>There was an error in processing your request.</Typography.Text>
+                    }
+                )
+            )
     }
 
     const fetchExcelLink = (fileId) => {
