@@ -68,9 +68,8 @@ function KahootQuestionTable(questionGenerators,
                              style={{minWidth: '50%'}}
                              tagRender={({value, closable, onClose}) => {
                                  const data = categoryToData[value]
-                                 // const color = data.color
                                  const tagParams = {
-                                     color: categoryToData[value].color,
+                                     color: data.color,
                                      key: value,
                                      closable: closable,
                                      onClose: onClose,

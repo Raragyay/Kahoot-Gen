@@ -26,7 +26,6 @@ function KahootSectionTable() {
                 })
                 .then(data => {
                     setTableData(data['tableData'])
-                    console.log(data['categories'])
                     setCategories(Object.fromEntries(
                         data['categories'].sort(({categoryName}) => categoryName)
                             .map((result, idx) => [result.categoryName, Object.assign(result, {color: colorArray[idx]})])))
